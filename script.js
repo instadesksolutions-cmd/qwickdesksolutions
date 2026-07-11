@@ -72,17 +72,3 @@ const observer = new IntersectionObserver((entries, obs) => {
 if(document.getElementById('stats')) {
     observer.observe(document.getElementById('stats'));
 }
-
-// Hero Lead Generation Form Alert
-document.getElementById('leadForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you! Your details have been submitted. The QwickDesk Solutions team will contact you shortly.');
-    document.getElementById('leadForm').reset();
-});
-
-// Bottom Contact Form Alert
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for contacting QwickDesk Solutions! Our executive team will reach out within 24 operational hours.');
-    document.getElementById('contactForm').reset();
-});
