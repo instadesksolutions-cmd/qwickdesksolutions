@@ -8,118 +8,94 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <nav>
         <div class="logo"><img src="143221.png" alt="QwickDesk Logo"></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#stats">Achievements</a></li>
+            <li><a href="#faq">FAQs</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
 
     <section id="home" class="hero">
-        <h1>Build Your Digital Presence with QwickDesk Solutions</h1>
-        <p>We create premium websites, software, branding, automation and digital marketing solutions that help businesses grow faster.</p>
-        <div class="cta-buttons">
-            <button class="btn-primary">Get Started</button>
-            <button class="btn-secondary">WhatsApp Now</button>
+        <div class="hero-content">
+            <h1>Build Your Digital Presence with <span class="gold-text">QwickDesk Solutions</span></h1>
+            <p>We create premium websites, software, branding, automation, and digital marketing solutions that help businesses grow faster across India.</p>
+            
+            <div class="hero-lead-form">
+                <h3>Get a Free Consultation</h3>
+                <form id="leadForm">
+                    <input type="text" id="leadName" placeholder="Enter Your Name *" required>
+                    <input type="tel" id="leadNumber" placeholder="Enter Mobile Number *" required pattern="[0-9]{10}" title="Enter a valid 10-digit number">
+                    
+                    <select id="leadCategory" required>
+                        <option value="" disabled selected>Select Service Category *</option>
+                        <option value="Web Development">Web & App Development</option>
+                        <option value="Digital Marketing">Digital Marketing & SEO</option>
+                        <option value="Loans & Insurance">Loans & Insurance</option>
+                        <option value="Business Registration">Business Registration & Tax</option>
+                        <option value="Investment">Investment & Trading</option>
+                        <option value="Other">Other Services</option>
+                    </select>
+                    
+                    <select id="leadState" required>
+                        <option value="" disabled selected>Select Your State *</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Other">Other State</option>
+                    </select>
+                    
+                    <button type="submit" class="btn-primary w-100">Submit Details <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+
         </div>
     </section>
 
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>QwickDesk Solutions is dedicated to helping businesses establish a strong online presence and streamline their operations. We combine creativity, technology, and extensive business support to deliver high-quality solutions. Our mission is to make professional digital and business services affordable and accessible for everyone.</p>
+        <div class="about-container">
+            <p>QwickDesk Solutions is dedicated to helping businesses, startups, professionals, and enterprises establish a powerful online presence and streamline operations. We combine creativity, modern technology, and extensive business support to deliver high-quality digital solutions that are fast, secure, and scalable. Our core mission is to make professional digital growth solutions premium yet highly affordable for everyone.</p>
+        </div>
     </section>
 
     <section id="services" class="services">
-        <h2>Our Services</h2>
+        <h2>Our Premium Services</h2>
         <div class="service-grid">
             
             <div class="service-card">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h3>Loans & Insurance</h3>
+                <div class="card-icon"><i class="fas fa-code"></i></div>
+                <h3>Web Development</h3>
                 <ul>
-                    <li>Personal, Business, Home & Vehicle Loans</li>
-                    <li>Loan Against Property (LAP)</li>
-                    <li>MSME & Mudra Loan Assistance</li>
-                    <li>Life, Health, Motor & General Insurance</li>
-                    <li>Insurance Renewal & Claim Support</li>
+                    <li>Website Development</li>
+                    <li>Business Websites & Landing Pages</li>
+                    <li>Portfolio & E-commerce Websites</li>
+                    <li>Web Applications</li>
                 </ul>
             </div>
 
             <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Investment & Trading</h3>
+                <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>App & Custom Software</h3>
                 <ul>
-                    <li>Demat Account Opening</li>
-                    <li>Mutual Fund & SIP Assistance</li>
-                    <li>Crypto Account Setup & Handling</li>
+                    <li>Android App Development</li>
+                    <li>Custom Software Development</li>
+                    <li>Custom Business Solutions</li>
                 </ul>
             </div>
 
             <div class="service-card">
-                <i class="fas fa-file-signature"></i>
-                <h3>Business Registration</h3>
-                <ul>
-                    <li>GST Registration & Return Filing</li>
-                    <li>MSME (Udyam) & FSSAI Registration</li>
-                    <li>IEC (Import Export Code) & Shop Act</li>
-                    <li>Business Registration & Documentation</li>
-                    <li>Digital Signature (DSC) & PAN Card</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-bullseye"></i>
-                <h3>Digital & Marketing</h3>
-                <ul>
-                    <li>E-commerce Seller Setup (Amazon, Flipkart, Meesho)</li>
-                    <li>Google Business Profile Setup</li>
-                    <li>Social Media Marketing & Local Promotion</li>
-                    <li>Lead Generation & Business Branding</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-briefcase"></i>
-                <h3>Consultancy & Support</h3>
-                <ul>
-                    <li>Business Consultancy & Financial Advisory</li>
-                    <li>Government Online Form Services</li>
-                    <li>Passport, Voter ID & Certificate Assistance</li>
-                    <li>End-to-End Business Support</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="why-choose-us">
-        <h2>Why Choose Us</h2>
-        <ul class="features-list">
-            <li>✔ Affordable Pricing</li>
-            <li>✔ Premium Quality</li>
-            <li>✔ Fast Delivery</li>
-            <li>✔ Secure & 24/7 Support</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-details">
-            <p><strong>Business Name:</strong> QwickDesk Solutions</p>
-            <p><strong>Phone:</strong> 7249828812</p>
-            <p><strong>WhatsApp:</strong> 7249828812</p>
-            <p><strong>Email:</strong> qwickdesksolutions@outlook.com</p>
-            <p><strong>Address:</strong> Pan India</p>
-            <p><strong>Working Hours:</strong> 9:00 AM – 9:00 PM</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="logo"><img src="143221.png" alt="QwickDesk Logo"></div>
-        <p>&copy; 2026 QwickDesk Solutions. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+                <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3>Digital Marketing & Design
+                    
