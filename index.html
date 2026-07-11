@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QwickDesk Solutions | Your Digital Growth Partner</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav>
         <div class="logo"><img src="143221.png" alt="QwickDesk Logo"></div>
         <ul class="nav-links">
@@ -25,28 +27,34 @@
         </div>
     </nav>
 
+    <!-- Hero Section with Form -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Build Your Digital Presence with <span class="gold-text">QwickDesk Solutions</span></h1>
             <p>We create premium websites, software, branding, automation, and digital marketing solutions that help businesses grow faster across India.</p>
             
+            <!-- Premium Lead Generation Form (Live Connected) -->
             <div class="hero-lead-form">
                 <h3>Get a Free Consultation</h3>
-                <form id="leadForm">
-                    <input type="text" id="leadName" placeholder="Enter Your Name *" required>
-                    <input type="tel" id="leadNumber" placeholder="Enter Mobile Number *" required pattern="[0-9]{10}" title="Enter a valid 10-digit number">
+                <form action="https://formsubmit.co/qwickdesksolutions@outlook.com" method="POST">
+                    <!-- Security/Spam control for FormSubmit -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Lead from QwickDesk Hero Form!">
                     
-                    <select id="leadCategory" required>
+                    <input type="text" name="Customer_Name" placeholder="Enter Your Name *" required>
+                    <input type="tel" name="Mobile_Number" placeholder="Enter Mobile Number *" required pattern="[0-9]{10}" title="Enter a valid 10-digit number">
+                    
+                    <select name="Service_Required" required>
                         <option value="" disabled selected>Select Service Category *</option>
-                        <option value="Web Development">Web & App Development</option>
-                        <option value="Digital Marketing">Digital Marketing & SEO</option>
+                        <option value="Web & App Development">Web & App Development</option>
+                        <option value="Digital Marketing & SEO">Digital Marketing & SEO</option>
                         <option value="Loans & Insurance">Loans & Insurance</option>
                         <option value="Business Registration">Business Registration & Tax</option>
-                        <option value="Investment">Investment & Trading</option>
-                        <option value="Other">Other Services</option>
+                        <option value="Investment & Trading">Investment & Trading</option>
+                        <option value="Other Services">Other Services</option>
                     </select>
                     
-                    <select id="leadState" required>
+                    <select name="State" required>
                         <option value="" disabled selected>Select Your State *</option>
                         <option value="Maharashtra">Maharashtra</option>
                         <option value="Delhi">Delhi</option>
@@ -63,6 +71,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <h2>About Us</h2>
         <div class="about-container">
@@ -70,6 +79,7 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
         <h2>Our Premium Services</h2>
         <div class="service-grid">
@@ -97,5 +107,258 @@
 
             <div class="service-card">
                 <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
-                <h3>Digital Marketing & Design
-                    
+                <h3>Digital Marketing & Design</h3>
+                <ul>
+                    <li>SEO & Google Business Profile</li>
+                    <li>Social Media & Local Promotion</li>
+                    <li>Lead Generation & Branding</li>
+                    <li>Logo & Banner Designing</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI & Automation</h3>
+                <ul>
+                    <li>AI Automation</li>
+                    <li>Business Automation</li>
+                    <li>WhatsApp Automation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <h3>Loans & Finance</h3>
+                <ul>
+                    <li>Personal & Business Loans</li>
+                    <li>Home, Vehicle & LAP Loans</li>
+                    <li>MSME & Mudra Loan Assistance</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Insurance Services</h3>
+                <ul>
+                    <li>Life & Health Insurance</li>
+                    <li>Motor & General Insurance</li>
+                    <li>Insurance Renewal & Claim Support</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Investments</h3>
+                <ul>
+                    <li>Demat Account Opening</li>
+                    <li>Mutual Fund & SIP Assistance</li>
+                    <li>Crypto Account Setup & Handling</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"><i class="fas fa-file-invoice"></i></div>
+                <h3>Registrations & Legal</h3>
+                <ul>
+                    <li>GST Registration & Return Filing</li>
+                    <li>MSME, FSSAI & Shop Act</li>
+                    <li>IEC (Import Export Code)</li>
+                    <li>Digital Signature (DSC) & PAN Card</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                <h3>E-Commerce & Support</h3>
+                <ul>
+                    <li>Amazon, Flipkart, Meesho Setup</li>
+                    <li>Government Online Form Services</li>
+                    <li>Passport, Voter ID & Certificates</li>
+                    <li>End-to-End Business Support</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <div class="features-list">
+            <div class="feature-item"><i class="fas fa-check-circle"></i> Affordable Pricing</div>
+            <div class="feature-item"><i class="fas fa-check-circle"></i> Premium Quality</div>
+            <div class="feature-item"><i class="fas fa-check-circle"></i> Fast Delivery</div>
+            <div class="feature-item"><i class="fas fa-check-circle"></i> Mobile Friendly Design</div>
+            <div class="feature-item"><i class="fas fa-check-circle"></i> SEO Optimized</div>
+            <div class="feature-item"><i class="fas fa-check-circle"></i> Secure Websites</div>
+            <div class="feature-item"><i class="fas fa-check-circle"></i> 24/7 Support</div>
+        </div>
+    </section>
+
+    <!-- Process Section (Timeline) -->
+    <section id="process" class="process">
+        <h2>Our Working Process</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>1. Requirement Discussion</h3>
+                    <p>Understanding your core business requirements and planning strategies.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2. Planning & Design</h3>
+                    <p>Creating structural layouts, blueprints, and luxury UI/UX graphics.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>3. Development & Testing</h3>
+                    <p>Writing clean code and performing speed & security optimizations.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>4. Delivery & Support</h3>
+                    <p>Deploying live files safely and providing ongoing 24/7 assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3 class="counter" data-target="100">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="counter" data-target="50">0</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="counter" data-target="100">0</h3>
+                <p>Satisfaction %</p>
+            </div>
+            <div class="stat-card">
+                <h3>24/7</h3>
+                <p>Premium Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Client Testimonials</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="client-info">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <div>
+                        <h4>Rajesh Sharma</h4>
+                        <p>Business Owner</p>
+                    </div>
+                </div>
+                <p class="review">"QwickDesk Solutions built our corporate site perfectly. The automation services saved us hours of manual operational work weekly. Highly recommended!"</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="client-info">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <div>
+                        <h4>Anjali Mehta</h4>
+                        <p>Startup Founder</p>
+                    </div>
+                </div>
+                <p class="review">"Super fast delivery and unmatched UI quality. Their team helped handle our business documentation and digital marketing side seamlessly."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What services does QwickDesk Solutions provide? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">We provide web and app development, corporate business setups, financial advisory documentation, graphic branding, AI automations, and digital marketing.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How fast is the delivery model? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Standard business websites and landing pages take between 3 to 7 working days, subject to the project complexity.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer 24/7 post-delivery maintenance? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Yes, we provide premium technical assistance, server updates, and support configuration 24/7 for optimal uptime management.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info-panel">
+                <h3>Get In Touch</h3>
+                <p><strong><i class="fas fa-building text-gold"></i> Business Name:</strong> QwickDesk Solutions</p>
+                <p><strong><i class="fas fa-phone-alt text-gold"></i> Phone:</strong> 7249828812</p>
+                <p><strong><i class="fab fa-whatsapp text-gold"></i> WhatsApp:</strong> 7249828812</p>
+                <p><strong><i class="fas fa-envelope text-gold"></i> Email:</strong> qwickdesksolutions@outlook.com</p>
+                <p><strong><i class="fas fa-map-marker-alt text-gold"></i> Address:</strong> Pan India</p>
+                <p><strong><i class="fas fa-clock text-gold"></i> Working Hours:</strong> 9:00 AM – 9:00 PM</p>
+            </div>
+            <div class="contact-form-panel">
+                <form action="https://formsubmit.co/qwickdesksolutions@outlook.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Inquiry from Contact Page!">
+                    <div class="form-group">
+                        <input type="text" name="Sender_Name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="Sender_Phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="Sender_Email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="Message" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="logo"><img src="143221.png" alt="QwickDesk Logo"></div>
+            <p class="footer-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms & Conditions</a>
+            </p>
+            <p class="copyright">&copy; 2026 QwickDesk Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-container">
+        <a href="https://wa.me/917249828812" class="floating-btn whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:7249828812" class="floating-btn call-float">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <button id="backToTop" class="floating-btn top-float">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+    </html>
+    
