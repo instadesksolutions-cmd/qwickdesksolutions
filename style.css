@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --dark-blue: #0a192f;
+    --black: #02050a;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(212, 175, 55, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black);
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Navbar Glassmorphism */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(2, 5, 10, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo img {
+    height: 60px;
+    filter: drop-shadow(0px 0px 5px rgba(212,175,55,0.5));
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.nav-links li a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle at center, #112240 0%, var(--black) 100%);
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    max-width: 1000px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-bottom: 40px;
+    color: #ccd6f6;
+}
+
+/* Premium Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #d4af37, #aa8222);
+    color: var(--black);
+    border: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+}
+
+.btn-secondary:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-3px);
+}
+
+/* General Sections */
+section {
+    padding: 100px 5%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--gold);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* About Section */
+.about p {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #a8b2d1;
+    line-height: 1.8;
+}
+
+/* Services Cards (Luxury Glassmorphism) */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 40px 30px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    transition: 0.5s;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.service-card ul {
+    list-style: none;
+}
+
+.service-card ul li {
+    margin-bottom: 12px;
+    color: #a8b2d1;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-card ul li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+
+/* Why Choose Us */
+.features-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.features-list li {
+    background: var(--dark-blue);
+    padding: 15px 35px;
+    border-radius: 30px;
+    border: 1px solid var(--gold);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
