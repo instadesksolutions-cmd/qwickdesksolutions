@@ -9,77 +9,42 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">QwickDesk Solutions</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#why">Why Choose Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact" class="nav-btn">Get Started</a></li>
+            <li><a href="index.html">Home</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>One Destination for Business, Financial & Digital Solutions</h1>
-            <p>We provide trusted services including Loans, Insurance, Business Registration, Documentation, Online Services, Marketing, Investments & Digital Solutions across India.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn-main">Get Started</a>
-                <a href="https://wa.me/917249828812" class="btn-sub"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-            </div>
-        </div>
+    <header class="hero">
+        <h1>One Destination for Business, Financial & Digital Solutions</h1>
+        <p>Premium services across India.</p>
     </header>
 
-    <!-- Premium Services Bento Grid -->
-    <section id="services">
-        <h2 class="section-title">Premium Services</h2>
-        <div class="bento-grid">
-            <a href="loans.html" class="service-card">
-                <h3><i class="fas fa-hand-holding-usd"></i> Loan Services</h3>
-                <p>Personal, Business, Home, Vehicle, Mudra Loans.</p>
-            </a>
-            <a href="insurance.html" class="service-card">
-                <h3><i class="fas fa-shield-alt"></i> Insurance Services</h3>
-                <p>Life, Health, Motor, Business Insurance, Claim Support.</p>
-            </a>
-            <a href="investment.html" class="service-card">
-                <h3><i class="fas fa-chart-line"></i> Investment & Account</h3>
-                <p>Demat, Trading, Mutual Funds, SIP, IPO, Crypto.</p>
-            </a>
-            <a href="registration.html" class="service-card">
-                <h3><i class="fas fa-file-invoice"></i> Business Registration</h3>
-                <p>GST, MSME, FSSAI, Shop Act, DSC.</p>
-            </a>
-            <a href="marketing.html" class="service-card">
-                <h3><i class="fas fa-bullhorn"></i> Business Marketing</h3>
-                <p>Social Media, Google Business, Lead Gen.</p>
-            </a>
-        </div>
-    </section>
+    <!-- Services Grid -->
+    <div class="bento-grid">
+        <a href="loans.html" class="service-card"><h3>Loan Services</h3></a>
+        <a href="insurance.html" class="service-card"><h3>Insurance Services</h3></a>
+        <a href="registration.html" class="service-card"><h3>Business Registration</h3></a>
+    </div>
 
-    <!-- Why Choose Us -->
-    <section id="why" class="why-section">
-        <h2>Why Choose Us</h2>
-        <div class="why-grid">
-            <div class="why-card"><h3>Fast Processing</h3></div>
-            <div class="why-card"><h3>Trusted Experts</h3></div>
-            <div class="why-card"><h3>100% Reliable</h3></div>
+    <!-- Why Choose Us Section -->
+    <section style="padding: 50px 10%; text-align: center;">
+        <h2 style="color:#d4af37; margin-bottom:30px;">Why Choose Us</h2>
+        <div class="bento-grid" style="padding: 0;">
+            <div class="service-card"><h3>Fast Processing</h3></div>
+            <div class="service-card"><h3>Trusted Experts</h3></div>
+            <div class="service-card"><h3>100% Reliable</h3></div>
         </div>
     </section>
 
     <!-- Contact & Footer -->
-    <footer id="contact">
+    <footer style="background:#000; padding:50px 10%; text-align:center;">
         <h2>Contact Us</h2>
-        <div class="contact-box">
-            <p><i class="fas fa-phone"></i> +91 7249828812</p>
-            <p><i class="fas fa-envelope"></i> qwickdesksolutions@outlook.com</p>
-        </div>
+        <p>Phone: 7249828812 | Email: qwickdesksolutions@outlook.com</p>
         <form action="https://formsubmit.co/qwickdesksolutions@outlook.com" method="POST" class="footer-form">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="tel" name="phone" placeholder="Mobile Number" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="tel" name="phone" placeholder="Phone" required>
             <button type="submit" class="btn-main">Submit Details</button>
         </form>
     </footer>
