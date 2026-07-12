@@ -5,9 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ==========================
-       1. MOBILE MENU
-    ========================== */
+    /* --- 1. MOBILE MENU TOGGLE --- */
     const menuBtn = document.querySelector(".menu-btn");
     const navLinks = document.querySelector(".nav-links");
 
@@ -17,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==========================
-       2. STICKY NAVBAR
-    ========================== */
+    /* --- 2. STICKY NAVBAR --- */
     const navbar = document.querySelector(".navbar");
     if(navbar) {
         window.addEventListener("scroll", () => {
@@ -31,9 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==========================
-       3. BACK TO TOP
-    ========================== */
+    /* --- 3. BACK TO TOP BUTTON --- */
     const topBtn = document.getElementById("topBtn");
     if(topBtn) {
         window.addEventListener("scroll", () => {
@@ -49,9 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==========================
-       4. SMOOTH NAVIGATION
-    ========================== */
+    /* --- 4. SMOOTH SCROLL & AUTO-CLOSE MENU --- */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -59,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (target) {
                 target.scrollIntoView({ behavior: "smooth" });
-                // Mobile menu close on click
+                // Close mobile menu if open
                 if(navLinks && navLinks.classList.contains("active")) {
                     navLinks.classList.remove("active");
                 }
@@ -67,9 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ==========================
-       5. EMI CALCULATOR
-    ========================== */
+    /* --- 5. EMI CALCULATOR --- */
     const emiBtn = document.getElementById("calculateEMI");
     if (emiBtn) {
         emiBtn.addEventListener("click", () => {
@@ -86,13 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const months = years * 12;
             const emi = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
 
-            document.getElementById("emiResult").innerHTML = "Monthly EMI : ₹" + emi.toFixed(0);
+            document.getElementById("emiResult").innerHTML = "Monthly EMI: ₹" + emi.toFixed(0);
         });
     }
 
-    /* ==========================
-       6. LOAN ELIGIBILITY
-    ========================== */
+    /* --- 6. LOAN ELIGIBILITY ALERT --- */
     const eligibilityBtn = document.querySelector(".eligibility-box button");
     if (eligibilityBtn) {
         eligibilityBtn.addEventListener("click", () => {
@@ -100,9 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==========================================
-       7. HERO LEAD FORM → WHATSAPP REDIRECT
-    ========================================== */
+    /* --- 7. HERO LEAD FORM TO WHATSAPP --- */
     const heroForm = document.getElementById("lead-form");
     if (heroForm) {
         heroForm.addEventListener("submit", function (e) {
@@ -112,8 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
             let message = "Hello QwickDesk Solutions, I need a consultation. Here are my details:%0A%0A";
             
             inputs.forEach(input => {
-                if (input.value && input.value !== "Select State" && input.value !== "Select Service") {
-                    let label = input.placeholder || input.name || "Info";
+                if (input.value && input.value !== "" && input.value !== "Select State" && input.value !== "Select Service") {
+                    let label = input.name || input.placeholder || "Detail";
                     message += `*${label}:* ${input.value}%0A`;
                 }
             });
@@ -124,17 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==========================================
-       8. FAQ ACCORDION
-    ========================================== */
+    /* --- 8. FAQ ACCORDION --- */
     const faqItems = document.querySelectorAll(".faq-item");
     faqItems.forEach(item => {
-        const answer = item.querySelector("p");
-        if (answer) {
-            answer.style.display = "none";
-        }
-
         item.addEventListener("click", () => {
+            const answer = item.querySelector("p");
+            
+            // Close others
             faqItems.forEach(faq => {
                 if (faq !== item) {
                     const p = faq.querySelector("p");
@@ -143,9 +125,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
             
-            if (answer.style.display === "none") {
+            // Toggle current
+            if (answer.style.display === "none" || answer.style.display === "") {
                 answer.style.display = "block";
-                item.style.borderColor = "#D4AF37"; // Gold border on active
+                item.style.borderColor = "#D4AF37";
             } else {
                 answer.style.display = "none";
                 item.style.borderColor = "rgba(255,255,255,.08)";
@@ -153,70 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ==========================================
-       9. NUMBER COUNTER ANIMATION
-    ========================================== */
-    const counters = document.querySelectorAll(".counter");
-    counters.forEach(counter => {
-        const targetText = counter.innerText;
-        const target = parseInt(targetText.replace(/\D/g, '')); // Extract number
-        if(isNaN(target)) return;
-
-        counter.innerText = "0";
-        
-        const updateCounter = () => {
-            const current = +counter.innerText.replace(/\D/g, '');
-            const increment = target / 50;
-
-            if (current < target) {
-                counter.innerText = Math.ceil(current + increment) + "+";
-                setTimeout(updateCounter, 30);
-            } else {
-                counter.innerText = targetText;
-            }
-        };
-
-        // Start counter when it comes into view
-        const observer = new IntersectionObserver(entries => {
-            if(entries[0].isIntersecting) {
-                updateCounter();
-                observer.disconnect();
-            }
-        });
-        observer.observe(counter);
-    });
-
-    /* ==========================================
-       10. SCROLL REVEAL ANIMATION (Fallback)
-    ========================================== */
-    const revealElements = document.querySelectorAll(".fade-in, .card, .service-box");
-    const revealOnScroll = () => {
-        revealElements.forEach(element => {
-            const position = element.getBoundingClientRect().top;
-            const screenHeight = window.innerHeight;
-            if (position < screenHeight - 100) {
-                element.classList.add("show");
-            }
-        });
-    };
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-
-    /* ==========================================
-       11. AUTO YEAR UPDATE IN FOOTER
-    ========================================== */
+    /* --- 9. AUTO YEAR UPDATE --- */
     const yearElement = document.getElementById("year");
     if(yearElement){
         yearElement.innerHTML = new Date().getFullYear();
-    }
-
-    /* ==========================================
-       12. PAGE LOADER REMOVE
-    ========================================== */
-    const loader = document.querySelector(".loader");
-    if(loader){
-        setTimeout(()=>{
-            loader.style.display="none";
-        }, 1000);
     }
 });
