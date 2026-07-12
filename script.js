@@ -1,52 +1,61 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* ========================================================
+   QWICKDESK SOLUTIONS - CORE JAVASCRIPT
+======================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* --- 1. NAVBAR SCROLL EFFECT --- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    /* --- 2. MOBILE MENU TOGGLE --- */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
     
-    // 1. MOBILE MENU
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    if(menuToggle) {
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.remove('fa-xmark');
+                hamburger.querySelector('i').classList.add('fa-bars');
+            });
         });
     }
 
-    // 2. LEAD GENERATION (HERO FORM -> WHATSAPP)
-    const leadForm = document.getElementById("leadForm");
-    if (leadForm) {
-        leadForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            
-            // Getting values by precise IDs
-            const name = document.getElementById("leadName").value;
-            const phone = document.getElementById("leadPhone").value;
-            const state = document.getElementById("leadState").value;
-            const district = document.getElementById("leadDistrict").value;
-            const service = document.getElementById("leadService").value;
-            
-            // Creating WhatsApp Message
-            let message = `Hello QwickDesk Solutions, I need a consultation.%0A%0A`;
-            message += `*Name:* ${name}%0A`;
-            message += `*Mobile:* ${phone}%0A`;
-            message += `*Location:* ${district}, ${state}%0A`;
-            message += `*Required Service:* ${service}`;
-
-            // Open WhatsApp
-            window.open(`https://wa.me/917249828812?text=${message}`, "_blank");
-            leadForm.reset();
-        });
-    }
-
-    // 3. EMI CALCULATOR
-    const btnEmi = document.getElementById("btnEmi");
+    /* --- 3. EMI CALCULATOR --- */
+    const btnEmi = document.getElementById('btnEmi');
     if (btnEmi) {
-        btnEmi.addEventListener("click", () => {
-            const amount = parseFloat(document.getElementById("loanAmount").value);
-            const rate = parseFloat(document.getElementById("loanRate").value);
-            const years = parseFloat(document.getElementById("loanTenure").value);
-            const resultBox = document.getElementById("emiResult");
+        btnEmi.addEventListener('click', () => {
+            const amount = parseFloat(document.getElementById('emiAmount').value);
+            const rate = parseFloat(document.getElementById('emiRate').value);
+            const years = parseFloat(document.getElementById('emiYears').value);
+            const resultBox = document.getElementById('emiResult');
 
-            if (!amount || !rate || !years) {
-                resultBox.innerText = "Please fill all EMI fields.";
-                resultBox.style.color = "red";
+            if (isNaN(amount) || isNaN(rate) || isNaN(years) || amount <= 0 || rate <= 0 || years <= 0) {
+                resultBox.style.color = "#ff4d4d";
+                resultBox.style.borderColor = "#ff4d4d";
+                resultBox.innerHTML = "Please enter valid numbers in all fields.";
                 return;
             }
 
@@ -54,34 +63,46 @@ document.addEventListener("DOMContentLoaded", () => {
             const months = years * 12;
             const emi = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
 
-            resultBox.style.color = "#D4AF37";
-            resultBox.innerText = "Monthly EMI: ₹" + Math.round(emi);
+            resultBox.style.color = "#d4af37";
+            resultBox.style.borderColor = "#d4af37";
+            const formattedEmi = Math.round(emi).toLocaleString('en-IN');
+            resultBox.innerHTML = `Estimated Monthly EMI: <strong>₹ ${formattedEmi}</strong>`;
         });
     }
 
-    // 4. ELIGIBILITY CHECKER (WORKING FIX)
-    const btnEligibility = document.getElementById("btnEligibility");
-    if(btnEligibility) {
-        btnEligibility.addEventListener("click", () => {
-            const income = document.getElementById("eligIncome").value;
-            const emi = document.getElementById("eligEmi").value;
-            const type = document.getElementById("eligType").value;
-            const resultBox = document.getElementById("eligResult");
+    /* --- 4. ELIGIBILITY CHECKER --- */
+    const btnElig = document.getElementById('btnElig');
+    if (btnElig) {
+        btnElig.addEventListener('click', () => {
+            const income = parseFloat(document.getElementById('eligIncome').value);
+            const emi = parseFloat(document.getElementById('eligEmi').value) || 0; 
+            const profile = document.getElementById('eligProfile').value;
+            const resultBox = document.getElementById('eligResult');
 
-            if(!income || !emi) {
-                resultBox.style.color = "red";
-                resultBox.innerText = "Please enter Income and EMI.";
+            if (isNaN(income) || income <= 0) {
+                resultBox.style.color = "#ff4d4d";
+                resultBox.style.borderColor = "#ff4d4d";
+                resultBox.innerHTML = "Please enter a valid Monthly Income.";
                 return;
             }
 
-            resultBox.style.color = "#25D366";
-            resultBox.innerText = `Details captured for ${type} (Income: ₹${income}). Our expert will call you shortly to confirm approval!`;
+            const emiRatio = (emi / income) * 100;
+            resultBox.style.borderColor = "#25d366";
+            resultBox.style.color = "#25d366";
+            
+            if (emiRatio > 60) {
+                resultBox.style.color = "#f7d774";
+                resultBox.style.borderColor = "#f7d774";
+                resultBox.innerHTML = `Profile: ${profile} <br> High existing EMI. Our expert will contact you for a custom solution.`;
+            } else {
+                resultBox.innerHTML = `Profile: ${profile} <br> Good chances of approval! Our expert will call you shortly.`;
+            }
         });
     }
 
-    // 5. FOOTER YEAR
-    const yearSpan = document.getElementById("year");
-    if(yearSpan) {
-        yearSpan.innerText = new Date().getFullYear();
+    /* --- 5. FOOTER DYNAMIC YEAR --- */
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 });
