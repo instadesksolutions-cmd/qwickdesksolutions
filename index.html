@@ -3,51 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QwickDesk Solutions | Premium Business Hub</title>
+    <title>QwickDesk Solutions | Business, Financial & Digital Solutions</title>
+    <meta name="description" content="QwickDesk Solutions provides Loan Assistance, Insurance, GST, MSME Registration, Business Documentation, Demat, Crypto Assistance, Digital Marketing and Online Business Solutions across India.">
+    <meta name="keywords" content="Loan, Insurance, GST, MSME, Demat, Crypto, PAN Card, Business Registration, Digital Marketing, India">
+    <meta name="robots" content="index,follow">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">QwickDesk Solutions</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <h1>One Destination for Business, Financial & Digital Solutions</h1>
-        <p>Premium services across India.</p>
-    </header>
-
-    <!-- Services Grid -->
-    <div class="bento-grid">
-        <a href="loans.html" class="service-card"><h3>Loan Services</h3></a>
-        <a href="insurance.html" class="service-card"><h3>Insurance Services</h3></a>
-        <a href="registration.html" class="service-card"><h3>Business Registration</h3></a>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="left">
+                <span><i class="fa-solid fa-phone"></i> +91 7249828812</span>
+                <span><i class="fa-solid fa-envelope"></i> qwickdesksolutions@outlook.com</span>
+            </div>
+            <div class="right">
+                <span><i class="fa-solid fa-location-dot"></i> Pan India</span>
+                <span><i class="fa-regular fa-clock"></i> 9:00 AM - 9:00 PM</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Why Choose Us Section -->
-    <section style="padding: 50px 10%; text-align: center;">
-        <h2 style="color:#d4af37; margin-bottom:30px;">Why Choose Us</h2>
-        <div class="bento-grid" style="padding: 0;">
-            <div class="service-card"><h3>Fast Processing</h3></div>
-            <div class="service-card"><h3>Trusted Experts</h3></div>
-            <div class="service-card"><h3>100% Reliable</h3></div>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">QwickDesk <span>Solutions</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="tel:+917249828812" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
+                    <a href="https://wa.me/917249828812" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-left" data-aos="fade-right">
+                <span class="hero-tag"><i class="fa-solid fa-award"></i> Trusted Business Partner Across India</span>
+                <h1>One Destination for <span>Business, Financial</span> & Digital Solutions</h1>
+                <p>We help Individuals, Professionals and Businesses with Loans, Insurance, GST Registration, MSME, Business Documentation, Demat Accounts, Crypto Assistance, Government Services and Digital Marketing.</p>
+                <div class="hero-buttons">
+                    <a href="#lead-form" class="primary-btn">Get Free Consultation</a>
+                    <a href="https://wa.me/917249828812" class="secondary-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+                </div>
+            </div>
+            <div class="hero-right" data-aos="fade-left">
+                <div class="glass-card">
+                    <h3>Quick Enquiry</h3>
+                    <form id="lead-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="tel" placeholder="Mobile Number" required>
+                        <input type="email" placeholder="Email Address">
+                        <select required><option>Select State</option><option>Maharashtra</option><option>Other</option></select>
+                        <input type="text" placeholder="District">
+                        <select required><option>Select Service</option><option>Personal Loan</option><option>Insurance</option><option>Business Registration</option></select>
+                        <textarea rows="3" placeholder="Write your requirement..."></textarea>
+                        <button type="submit">Get Free Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title"><span>OUR SERVICES</span><h2>Complete Solutions</h2></div>
+            <div class="services-grid">
+                <div class="service-card"><i class="fa-solid fa-money-bill-wave"></i><h3>Loan Services</h3><p>Personal, Business, Home, Mudra Loans.</p></div>
+                <div class="service-card"><i class="fa-solid fa-shield-heart"></i><h3>Insurance</h3><p>Life, Health, Motor, Claim Support.</p></div>
+                <div class="service-card"><i class="fa-solid fa-chart-line"></i><h3>Investment</h3><p>Demat, Trading, Mutual Funds, Crypto.</p></div>
+                <div class="service-card"><i class="fa-solid fa-building"></i><h3>Business Registration</h3><p>GST, MSME, FSSAI, Shop Act.</p></div>
+            </div>
         </div>
     </section>
 
     <!-- Contact & Footer -->
-    <footer style="background:#000; padding:50px 10%; text-align:center;">
-        <h2>Contact Us</h2>
-        <p>Phone: 7249828812 | Email: qwickdesksolutions@outlook.com</p>
-        <form action="https://formsubmit.co/qwickdesksolutions@outlook.com" method="POST" class="footer-form">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="tel" name="phone" placeholder="Phone" required>
-            <button type="submit" class="btn-main">Submit Details</button>
-        </form>
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Phone: +91 7249828812 | Email: qwickdesksolutions@outlook.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 QwickDesk Solutions. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/917249828812" class="floating-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="tel:+917249828812" class="floating-call"><i class="fa-solid fa-phone"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({duration:1000, once:true});</script>
+    <script src="script.js"></script>
 </body>
 </html>
