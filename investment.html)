@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><link rel="stylesheet" href="style.css"></head>
-<body style="padding: 50px 10%;">
-    <h1 style="color:#d4af37;">Investment & Account Services</h1>
-    <p style="margin: 20px 0;">We provide: Demat Account, Trading Account, Mutual Funds, SIP, IPO Assistance & Crypto Account Setup.</p>
-    <a href="index.html" class="btn-main">← Back to Home</a>
-</body>
-</html>
