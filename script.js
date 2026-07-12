@@ -1,6 +1,5 @@
 /* ======================================================
-   QWICKDESK SOLUTIONS
-   SCRIPT.JS - COMPLETE MASTER FILE
+   QWICKDESK SOLUTIONS - FINAL SCRIPT
 ====================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,49 +14,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* --- 2. STICKY NAVBAR --- */
-    const navbar = document.querySelector(".navbar");
-    if(navbar) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        });
-    }
-
-    /* --- 3. BACK TO TOP BUTTON --- */
-    const topBtn = document.getElementById("topBtn");
-    if(topBtn) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                topBtn.style.display = "flex";
-            } else {
-                topBtn.style.display = "none";
-            }
-        });
-
-        topBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    }
-
-    /* --- 4. SMOOTH SCROLL & AUTO-CLOSE MENU --- */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            
-            if (target) {
-                target.scrollIntoView({ behavior: "smooth" });
-                // Close mobile menu if open
-                if(navLinks && navLinks.classList.contains("active")) {
-                    navLinks.classList.remove("active");
-                }
+    /* --- 2. HIDE MENU ON LINK CLICK --- */
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(navLinks.classList.contains('active')){
+                navLinks.classList.remove('active');
             }
         });
     });
+
+    /* --- 3. BACK TO TOP BUTTON --- */
+    const topBtn = document.getElementById("topBtn");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            topBtn.style.display = "flex";
+        } else {
+            topBtn.style.display = "none";
+        }
+    });
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    /* --- 4. HERO FORM TO WHATSAPP --- */
+    const heroForm = document.getElementById("lead-form");
+    if (heroForm) {
+        heroForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            const inputs = heroForm.querySelectorAll("input, select");
+            let message = "Hello QwickDesk Solutions, I need a consultation. My details:%0A%0A";
+            
+            inputs.forEach(input => {
+                if (input.value && input.value !== "" && !input.value.includes("Select")) {
+                    let label = input.name || input.placeholder;
+                    message += `*${label}:* ${input.value}%0A`;
+                }
+            });
+
+            window.open(`https://wa.me/917249828812?text=${message}`, "_blank");
+            heroForm.reset();
+        });
+    }
 
     /* --- 5. EMI CALCULATOR --- */
     const emiBtn = document.getElementById("calculateEMI");
@@ -80,65 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* --- 6. LOAN ELIGIBILITY ALERT --- */
-    const eligibilityBtn = document.querySelector(".eligibility-box button");
-    if (eligibilityBtn) {
-        eligibilityBtn.addEventListener("click", () => {
-            alert("Your details have been captured. Our financial expert will call you shortly to confirm your eligibility.");
+    /* --- 6. ELIGIBILITY BUTTON --- */
+    const checkBtn = document.querySelector(".check-btn");
+    if(checkBtn) {
+        checkBtn.addEventListener("click", () => {
+            alert("Request Submitted! Our team will verify and contact you shortly.");
         });
     }
 
-    /* --- 7. HERO LEAD FORM TO WHATSAPP --- */
-    const heroForm = document.getElementById("lead-form");
-    if (heroForm) {
-        heroForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            
-            const inputs = heroForm.querySelectorAll("input, select, textarea");
-            let message = "Hello QwickDesk Solutions, I need a consultation. Here are my details:%0A%0A";
-            
-            inputs.forEach(input => {
-                if (input.value && input.value !== "" && input.value !== "Select State" && input.value !== "Select Service") {
-                    let label = input.name || input.placeholder || "Detail";
-                    message += `*${label}:* ${input.value}%0A`;
-                }
-            });
-
-            // Redirect to WhatsApp
-            window.open(`https://wa.me/917249828812?text=${message}`, "_blank");
-            heroForm.reset();
-        });
-    }
-
-    /* --- 8. FAQ ACCORDION --- */
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach(item => {
-        item.addEventListener("click", () => {
-            const answer = item.querySelector("p");
-            
-            // Close others
-            faqItems.forEach(faq => {
-                if (faq !== item) {
-                    const p = faq.querySelector("p");
-                    if (p) p.style.display = "none";
-                    faq.style.borderColor = "rgba(255,255,255,.08)";
-                }
-            });
-            
-            // Toggle current
-            if (answer.style.display === "none" || answer.style.display === "") {
-                answer.style.display = "block";
-                item.style.borderColor = "#D4AF37";
-            } else {
-                answer.style.display = "none";
-                item.style.borderColor = "rgba(255,255,255,.08)";
-            }
-        });
-    });
-
-    /* --- 9. AUTO YEAR UPDATE --- */
-    const yearElement = document.getElementById("year");
-    if(yearElement){
-        yearElement.innerHTML = new Date().getFullYear();
+    /* --- 7. FOOTER YEAR --- */
+    const yearSpan = document.getElementById("year");
+    if(yearSpan) {
+        yearSpan.innerText = new Date().getFullYear();
     }
 });
