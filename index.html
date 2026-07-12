@@ -2,228 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QwickDesk Solutions | Premium Business & Financial Services</title>
-    <meta name="description" content="QwickDesk Solutions provides Loan Assistance, Insurance, GST, MSME Registration, Business Documentation, Demat, Crypto Assistance, and Digital Marketing across India.">
-    
-    <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- TOP BAR -->
     <div class="top-bar">
-        <div class="container top-bar-container">
-            <div class="left">
-                <span><i class="fa-solid fa-phone"></i> +91 7249828812</span>
-                <span><i class="fa-solid fa-envelope"></i> qwickdesksolutions@outlook.com</span>
-            </div>
-            <div class="right">
-                <span><i class="fa-solid fa-location-dot"></i> Pan India</span>
-                <span><i class="fa-regular fa-clock"></i> 9:00 AM - 9:00 PM</span>
-            </div>
+        <div class="container top-bar-flex">
+            <div><i class="fa-solid fa-phone"></i> +91 7249828812 | <i class="fa-solid fa-envelope"></i> qwickdesksolutions@outlook.com</div>
+            <div><i class="fa-solid fa-location-dot"></i> Pan India | <i class="fa-regular fa-clock"></i> 9:00 AM - 9:00 PM</div>
         </div>
     </div>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="container nav-container">
+    <nav class="navbar">
+        <div class="container nav-flex">
             <a href="#" class="logo">QwickDesk <span>Solutions</span></a>
-            
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
             <div class="nav-buttons">
-                <a href="tel:+917249828812" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
-                <a href="https://wa.me/917249828812" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="tel:+917249828812" class="btn-gold-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
             </div>
-
-            <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+            <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
         </div>
-    </header>
+    </nav>
 
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <div class="container hero-container">
-            <div class="hero-left" data-aos="fade-right">
-                <span class="hero-tag"><i class="fa-solid fa-award"></i> Trusted Business Partner Across India</span>
+        <div class="container grid-2">
+            <div class="hero-content">
+                <span class="tag"><i class="fa-solid fa-award"></i> Trusted Business Partner</span>
                 <h1>One Destination for <span>Business, Financial</span> & Digital Solutions</h1>
-                <p>We help Individuals, Professionals and Businesses with Loans, Insurance, GST Registration, MSME, Demat Accounts, Crypto Assistance, and Digital Marketing.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="primary-btn">Get Free Consultation</a>
-                </div>
-                <div class="hero-features">
-                    <div class="feature"><i class="fa-solid fa-bolt"></i> Fast Processing</div>
-                    <div class="feature"><i class="fa-solid fa-shield-halved"></i> Trusted Experts</div>
-                    <div class="feature"><i class="fa-solid fa-globe"></i> Pan India</div>
+                <p>Expert assistance for Loans, Insurance, GST, MSME, Demat, Crypto, and Marketing.</p>
+                <div class="features-list">
+                    <span><i class="fa-solid fa-bolt"></i> Fast Processing</span>
+                    <span><i class="fa-solid fa-shield-halved"></i> Trusted Experts</span>
+                    <span><i class="fa-solid fa-globe"></i> Pan India</span>
                 </div>
             </div>
             
-            <div class="hero-right" data-aos="fade-left">
-                <div class="glass-card">
-                    <h3>Quick Enquiry</h3>
-                    <p>Fill the form & get a callback instantly.</p>
-                    <form id="lead-form">
-                        <input type="text" name="Name" placeholder="Full Name" required>
-                        <input type="tel" name="Mobile" placeholder="Mobile Number" required>
-                        <select name="State" required>
+            <div class="hero-form-box card-glass">
+                <h3 style="color: var(--gold); margin-bottom: 15px;">Quick Enquiry</h3>
+                <p style="margin-bottom: 20px; font-size: 14px;">Fill the form & get a callback instantly.</p>
+                <form id="leadForm">
+                    <input type="text" id="leadName" class="form-input" placeholder="Full Name" required>
+                    <input type="tel" id="leadPhone" class="form-input" placeholder="Mobile Number" required>
+                    <div class="grid-2-inner">
+                        <select id="leadState" class="form-input" required>
                             <option value="">Select State</option>
                             <option>Maharashtra</option>
                             <option>Gujarat</option>
                             <option>Delhi</option>
                             <option>Other</option>
                         </select>
-                        <input type="text" name="District" placeholder="District">
-                        <select name="Service" required>
-                            <option value="">Select Service</option>
-                            <option>Personal Loan</option>
-                            <option>Business Loan</option>
-                            <option>Insurance</option>
-                            <option>Business Registration</option>
-                            <option>Other</option>
-                        </select>
-                        <button type="submit">Submit Details</button>
-                    </form>
-                </div>
+                        <input type="text" id="leadDistrict" class="form-input" placeholder="District" required>
+                    </div>
+                    <select id="leadService" class="form-input" required>
+                        <option value="">Select Service</option>
+                        <option>Personal / Business Loan</option>
+                        <option>Insurance</option>
+                        <option>Business Registration</option>
+                        <option>Demat / Crypto</option>
+                        <option>Other</option>
+                    </select>
+                    <button type="submit" class="btn-gold-solid">Get Free Consultation</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- OUR SERVICES (With Extra Icons) -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <span>OUR SERVICES</span>
-                <h2>Premium Business Solutions</h2>
+            <h2 class="section-title">Premium Business Solutions</h2>
+            <div class="grid-3">
+                <div class="service-card">
+                    <i class="fa-solid fa-money-bill-wave icon-large"></i>
+                    <h3>Loan Services</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Personal & Business Loan</li>
+                        <li><i class="fa-solid fa-check"></i> Home & Vehicle Loan</li>
+                        <li><i class="fa-solid fa-check"></i> MSME & Mudra Loan</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-shield-heart icon-large"></i>
+                    <h3>Insurance Services</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Life & Health Insurance</li>
+                        <li><i class="fa-solid fa-check"></i> Motor & Business</li>
+                        <li><i class="fa-solid fa-check"></i> Claim Support</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-building icon-large"></i>
+                    <h3>Registration</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> GST & MSME</li>
+                        <li><i class="fa-solid fa-check"></i> Shop Act & FSSAI</li>
+                        <li><i class="fa-solid fa-check"></i> DSC & IEC</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-chart-pie icon-large"></i>
+                    <h3>Investments</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Demat & Trading</li>
+                        <li><i class="fa-solid fa-check"></i> Mutual Funds</li>
+                        <li><i class="fa-solid fa-check"></i> Crypto Support</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-bullhorn icon-large"></i>
+                    <h3>Digital Marketing</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Social Media</li>
+                        <li><i class="fa-solid fa-check"></i> Google Profile</li>
+                        <li><i class="fa-solid fa-check"></i> Lead Gen</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-laptop icon-large"></i>
+                    <h3>Online Services</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> PAN & Passport</li>
+                        <li><i class="fa-solid fa-check"></i> Income Cert.</li>
+                        <li><i class="fa-solid fa-check"></i> Form Filling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tools" style="background: #0B1F3A;">
+        <div class="container grid-2">
+            <div class="card-glass">
+                <h3 style="color: var(--gold); margin-bottom: 20px; text-align: center;">EMI Calculator</h3>
+                <input type="number" id="loanAmount" class="form-input" placeholder="Loan Amount (₹)">
+                <input type="number" id="loanRate" class="form-input" placeholder="Interest Rate (%)">
+                <input type="number" id="loanTenure" class="form-input" placeholder="Tenure (Years)">
+                <button id="btnEmi" class="btn-gold-solid">Calculate EMI</button>
+                <h3 id="emiResult" style="color:var(--gold); text-align:center; margin-top:20px;"></h3>
             </div>
             
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card" data-aos="zoom-in">
-                    <i class="fa-solid fa-money-bill-wave main-icon"></i>
-                    <h3>Loan Services</h3>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Personal & Business Loan</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Home & Vehicle Loan</li>
-                        <li><i class="fa-solid fa-circle-check"></i> MSME & Mudra Loan</li>
-                    </ul>
-                </div>
-                <!-- Service 2 -->
-                <div class="service-card" data-aos="zoom-in">
-                    <i class="fa-solid fa-shield-heart main-icon"></i>
-                    <h3>Insurance Services</h3>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Life & Health Insurance</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Motor & Business Insurance</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Claim Support & Renewal</li>
-                    </ul>
-                </div>
-                <!-- Service 3 -->
-                <div class="service-card" data-aos="zoom-in">
-                    <i class="fa-solid fa-building main-icon"></i>
-                    <h3>Business Registration</h3>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> GST & MSME Registration</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Shop Act & FSSAI</li>
-                        <li><i class="fa-solid fa-circle-check"></i> DSC & IEC</li>
-                    </ul>
-                </div>
-                <!-- Service 4 -->
-                <div class="service-card" data-aos="zoom-in">
-                    <i class="fa-solid fa-chart-pie main-icon"></i>
-                    <h3>Investments & Accounts</h3>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Demat & Trading Account</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Mutual Funds & SIP</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Crypto Account Support</li>
-                    </ul>
-                </div>
-                <!-- Service 5 -->
-                <div class="service-card" data-aos="zoom-in">
-                    <i class="fa-solid fa-bullhorn main-icon"></i>
-                    <h3>Digital Marketing</h3>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Social Media Marketing</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Google Business Profile</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Lead Generation</li>
-                    </ul>
-                </div>
-                <!-- Service 6 -->
-                <div class="service-card" data-aos="zoom-in">
-                    <i class="fa-solid fa-file-signature main-icon"></i>
-                    <h3>Govt & Online Services</h3>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> PAN Card & Passport</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Income & Birth Certificate</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Online Form Filling</li>
-                    </ul>
-                </div>
+            <div class="card-glass">
+                <h3 style="color: var(--gold); margin-bottom: 20px; text-align: center;">Eligibility Checker</h3>
+                <input type="number" id="eligIncome" class="form-input" placeholder="Monthly Income (₹)" required>
+                <input type="number" id="eligEmi" class="form-input" placeholder="Existing EMI (if any)" required>
+                <select id="eligType" class="form-input">
+                    <option value="Salaried">Salaried</option>
+                    <option value="Self Employed">Self Employed</option>
+                </select>
+                <button id="btnEligibility" class="btn-gold-solid">Check Eligibility</button>
+                <p id="eligResult" style="color: #25D366; text-align:center; margin-top:20px; font-weight:bold;"></p>
             </div>
         </div>
     </section>
 
-    <!-- TOOLS (EMI & ELIGIBILITY) -->
-    <section class="calculator" style="background: #081625;">
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-            <div class="calculator-box" data-aos="fade-right">
-                <h3 style="color: var(--gold); text-align: center; margin-bottom:20px;">EMI Calculator</h3>
-                <input type="number" id="loanAmount" placeholder="Loan Amount (₹)">
-                <input type="number" id="interestRate" placeholder="Interest Rate %">
-                <input type="number" id="loanYears" placeholder="Tenure (Years)">
-                <button id="calculateEMI">Calculate EMI</button>
-                <h3 id="emiResult" style="color:var(--gold); text-align:center; margin-top:20px; font-size:22px;"></h3>
-            </div>
-            <div class="eligibility-box" data-aos="fade-left">
-                <h3 style="color: var(--gold); text-align: center; margin-bottom:20px;">Eligibility Checker</h3>
-                <input type="number" placeholder="Monthly Income">
-                <input type="number" placeholder="Existing EMI">
-                <select><option>Salaried</option><option>Self Employed</option></select>
-                <button class="check-btn">Check Eligibility</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & FOOTER -->
-    <section class="contact" id="contact" style="background: #07111F;">
+    <footer>
         <div class="container">
-            <div class="section-title"><span>CONTACT</span><h2>Get In Touch</h2></div>
-            <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-                <div class="contact-info glass-card">
-                    <h3 style="color:var(--gold); margin-bottom:15px;">QwickDesk Solutions</h3>
-                    <p><i class="fa-solid fa-phone" style="color:var(--gold);"></i> +91 7249828812</p>
-                    <p><i class="fa-brands fa-whatsapp" style="color:var(--gold);"></i> +91 7249828812</p>
-                    <p><i class="fa-solid fa-envelope" style="color:var(--gold);"></i> qwickdesksolutions@outlook.com</p>
-                    <p><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> Pan India</p>
-                </div>
-            </div>
+            <h2 style="color: var(--gold); margin-bottom:10px;">QwickDesk Solutions</h2>
+            <p>One Destination for Business, Financial & Digital Solutions.</p>
+            <p style="margin-top:20px; color:#999;">© <span id="year"></span> All Rights Reserved.</p>
         </div>
-    </section>
-
-    <footer style="background: #030b15; padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-        <p style="color:#999;">© <span id="year"></span> QwickDesk Solutions. All Rights Reserved.</p>
     </footer>
 
-    <!-- FLOATING BUTTONS -->
-    <a href="https://wa.me/917249828812" class="floating-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="tel:+917249828812" class="floating-call"><i class="fa-solid fa-phone"></i></a>
-    <button id="topBtn"><i class="fa-solid fa-arrow-up"></i></button>
+    <a href="https://wa.me/917249828812" class="float-wa"><i class="fa-brands fa-whatsapp"></i></a>
 
-    <!-- SCRIPTS -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
     <script src="script.js"></script>
 </body>
-</html>
+                    </html>
+                    
