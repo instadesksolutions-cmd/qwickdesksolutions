@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QwickDesk Solutions | Premium Business & Financial Services</title>
     
-    <!-- Favicon Add kiya hai -->
-    <link rel="icon" type="image/png" href="logo.png">
-    
     <meta name="description" content="QwickDesk Solutions: One destination for Loans, Insurance, Business Registration, and Digital Marketing across Pan India.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,10 +30,7 @@
 
     <nav class="navbar" id="navbar">
         <div class="container nav-flex">
-            <!-- Yahan logo add kiya hai -->
-            <a href="#home" class="logo">
-                <img src="logo.png" alt="QwickDesk Solutions Logo" style="height: 45px; vertical-align: middle; margin-right: 10px;">
-            </a>
+            <a href="#home" class="logo">QwickDesk <span>Solutions</span></a>
             
             <ul class="nav-links" id="navMenu">
                 <li><a href="#home">Home</a></li>
@@ -55,20 +49,170 @@
             </div>
         </div>
     </nav>
-    
-    <!-- Baaki ka content waisa hi rahega... -->
-    
+
     <section class="hero" id="home">
-        <!-- ... (Hero Section same raho) -->
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-award"></i> Trusted Business Partner</span>
+                <h1>One Destination for <span>Business, Financial</span> & Digital Solutions</h1>
+                <p>Expert assistance for Loans, Insurance, GST, MSME, Demat, Crypto, and Marketing across India. Fast, secure, and reliable.</p>
+                <div class="hero-features">
+                    <span><i class="fa-solid fa-bolt"></i> Fast Processing</span>
+                    <span><i class="fa-solid fa-shield-halved"></i> Trusted Experts</span>
+                    <span><i class="fa-solid fa-globe"></i> Pan India</span>
+                </div>
+            </div>
+            
+            <div class="hero-form card-glass">
+                <h3>Quick Enquiry</h3>
+                <p>Fill the form & get a callback instantly.</p>
+                
+                <form action="https://formsubmit.co/qwickdesksolutions@outlook.com" method="POST" id="leadForm">
+                    <input type="hidden" name="_subject" value="New Lead from QwickDesk Website!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <input type="text" name="Name" class="input-field" placeholder="Full Name" required>
+                    <input type="tel" name="Mobile" class="input-field" placeholder="Mobile Number" required>
+                    
+                    <div class="input-row">
+                        <select name="State" class="input-field" required>
+                            <option value="" disabled selected>Select State</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <input type="text" name="District" class="input-field" placeholder="District" required>
+                    </div>
+                    
+                    <select name="Service_Required" class="input-field" required>
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="Loans">Personal / Business Loan</option>
+                        <option value="Insurance">Insurance Services</option>
+                        <option value="Business Registration">Business Registration</option>
+                        <option value="Investment & Crypto">Demat / Crypto</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    
+                    <button type="submit" class="btn-solid-gold w-100">Get Free Consultation</button>
+                </form>
+            </div>
+        </div>
     </section>
 
-    <!-- ... (Baki saare sections same rahenge) ... -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premium Business Solutions</h2>
+                <p>Everything your business needs to grow, secured under one roof.</p>
+            </div>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-money-bill-wave icon-main"></i>
+                    <h3>Loan Services</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Personal & Business Loan</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Home & Vehicle Loan</li>
+                        <li><i class="fa-solid fa-circle-check"></i> MSME & Mudra Loan</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-shield-heart icon-main"></i>
+                    <h3>Insurance Services</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Life & Health Insurance</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Motor & Business Policy</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Claim Support & Renewal</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-file-signature icon-main"></i>
+                    <h3>Business Registration</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> GST & MSME Registration</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Shop Act & FSSAI</li>
+                        <li><i class="fa-solid fa-circle-check"></i> DSC & IEC Documentation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-chart-line icon-main"></i>
+                    <h3>Investments & Accounts</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Demat & Trading Account</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Mutual Funds & SIP</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Crypto Account Handling</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-bullhorn icon-main"></i>
+                    <h3>Digital Marketing</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Social Media Management</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Google Business Profile</li>
+                        <li><i class="fa-solid fa-circle-check"></i> B2B Lead Generation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-laptop icon-main"></i>
+                    <h3>Government Services</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> PAN Card & Passport</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Income & Birth Certificate</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Online Form Filling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tools" id="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Financial Tools</h2>
+                <p>Calculate your EMIs and check your loan eligibility instantly.</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card card-glass">
+                    <h3 class="tool-heading">EMI Calculator</h3>
+                    <input type="number" id="emiAmount" class="input-field" placeholder="Loan Amount (₹)">
+                    <div class="input-row">
+                        <input type="number" id="emiRate" class="input-field" placeholder="Interest Rate (%)">
+                        <input type="number" id="emiYears" class="input-field" placeholder="Tenure (Years)">
+                    </div>
+                    <button id="btnEmi" class="btn-solid-gold w-100">Calculate EMI</button>
+                    <div class="result-box" id="emiResult">Your EMI will appear here</div>
+                </div>
+
+                <div class="tool-card card-glass">
+                    <h3 class="tool-heading">Eligibility Checker</h3>
+                    <input type="number" id="eligIncome" class="input-field" placeholder="Monthly Income (₹)">
+                    <div class="input-row">
+                        <input type="number" id="eligEmi" class="input-field" placeholder="Existing EMI (if any)">
+                        <select id="eligProfile" class="input-field">
+                            <option value="Salaried">Salaried</option>
+                            <option value="Self-Employed">Self-Employed</option>
+                        </select>
+                    </div>
+                    <button id="btnElig" class="btn-solid-gold w-100">Check Now</button>
+                    <div class="result-box" id="eligResult">Check your loan capability</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer" id="contact">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <!-- Footer mein bhi logo dikhana hai toh yahan bhi add kar sakte ho -->
-                <img src="logo.png" alt="QwickDesk Logo" style="width: 120px; margin-bottom: 10px;">
+                <h2>QwickDesk <span>Solutions</span></h2>
                 <p>One Destination for Business, Financial & Digital Solutions across India.</p>
             </div>
             <div class="footer-contact">
