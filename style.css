@@ -3,238 +3,135 @@
    PREMIUM CSS - COMPLETE MASTER FILE
 ====================================================== */
 
-/* ==========================
-   1. GOOGLE FONT & RESET
-========================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+html { overflow-x: hidden; }
+body { font-family: 'Poppins', sans-serif; background: #07111F; color: #ffffff; overflow-x: hidden; line-height: 1.7; }
+:root { --primary: #0B1F3A; --secondary: #102B53; --gold: #D4AF37; --gold-light: #F7D774; --white: #ffffff; --text: #d8d8d8; --glass: rgba(255, 255, 255, .08); --border: rgba(255, 255, 255, .12); --shadow: 0 20px 60px rgba(0, 0, 0, .35); --radius: 20px; }
 
-html {
-    overflow-x: hidden;
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 20px; }
+::-webkit-scrollbar-track { background: #08111c; }
+::selection { background: var(--gold); color: #111; }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #07111F;
-    color: #ffffff;
-    overflow-x: hidden;
-    line-height: 1.7;
-}
-
-/* ==========================
-   2. VARIABLES & SCROLLBAR
-========================== */
-:root {
-    --primary: #0B1F3A;
-    --secondary: #102B53;
-    --gold: #D4AF37;
-    --gold-light: #F7D774;
-    --white: #ffffff;
-    --text: #d8d8d8;
-    --glass: rgba(255, 255, 255, .08);
-    --border: rgba(255, 255, 255, .12);
-    --shadow: 0 20px 60px rgba(0, 0, 0, .35);
-    --radius: 20px;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 20px;
-}
-::-webkit-scrollbar-track {
-    background: #08111c;
-}
-
-::selection {
-    background: var(--gold);
-    color: #111;
-}
-
-/* ==========================
-   3. GLOBAL COMPONENTS
-========================== */
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; height: auto; }
 button { cursor: pointer; }
+.container { width: 90%; max-width: 1300px; margin: auto; }
+section { padding: 90px 0; position: relative; }
 
-.container {
-    width: 90%;
-    max-width: 1300px;
-    margin: auto;
-}
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title span { display: inline-block; padding: 8px 18px; background: rgba(212, 175, 55, .15); border: 1px solid rgba(212, 175, 55, .4); color: var(--gold); border-radius: 40px; font-size: 14px; margin-bottom: 20px; }
+.section-title h2 { font-size: 42px; font-weight: 700; margin-bottom: 15px; }
+.section-title p { max-width: 700px; margin: auto; color: #c9c9c9; }
 
-section {
-    padding: 90px 0;
-    position: relative;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-.section-title span {
-    display: inline-block;
-    padding: 8px 18px;
-    background: rgba(212, 175, 55, .15);
-    border: 1px solid rgba(212, 175, 55, .4);
-    color: var(--gold);
-    border-radius: 40px;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-.section-title h2 {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-.section-title p {
-    max-width: 700px;
-    margin: auto;
-    color: #c9c9c9;
-}
-
-/* ==========================
-   4. TOP BAR & NAVBAR
-========================== */
-.top-bar {
-    background: #03101f;
-    padding: 10px 0;
-    font-size: 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
-}
-.top-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.top-bar span {
-    margin-right: 18px;
-    color: #ddd;
-}
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: rgba(7, 17, 31, .75);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
-}
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 85px;
-}
-.logo {
-    font-size: 30px;
-    font-weight: 800;
-    color: #fff;
-}
+/* TOP BAR & NAVBAR */
+.top-bar { background: #03101f; padding: 10px 0; font-size: 14px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.top-bar span { margin-right: 18px; color: #ddd; }
+.navbar { position: sticky; top: 0; z-index: 999; background: rgba(7, 17, 31, .75); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255, 255, 255, .08); transition: 0.3s; }
+.navbar.sticky { background: rgba(5,10,20,.95); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.logo { font-size: 30px; font-weight: 800; color: #fff; }
 .logo span { color: var(--gold); }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 35px;
-}
-.nav-links a {
-    font-weight: 500;
-    transition: .3s;
-}
+.nav-links { display: flex; list-style: none; gap: 35px; transition: 0.3s; }
+.nav-links a { font-weight: 500; transition: .3s; }
 .nav-links a:hover { color: var(--gold); }
-
-.nav-buttons {
-    display: flex;
-    gap: 15px;
-}
-.call-btn, .whatsapp-btn {
-    padding: 12px 24px;
-    border-radius: 40px;
-    font-weight: 600;
-    transition: .3s;
-}
-.call-btn {
-    background: var(--gold);
-    color: #111;
-}
+.nav-buttons { display: flex; gap: 15px; }
+.call-btn, .whatsapp-btn { padding: 12px 24px; border-radius: 40px; font-weight: 600; transition: .3s; }
+.call-btn { background: var(--gold); color: #111; }
 .whatsapp-btn { border: 1px solid rgba(255, 255, 255, .15); }
 .whatsapp-btn:hover { background: #25D366; }
-.menu-btn { display: none; font-size: 30px; cursor: pointer; }
+.menu-btn { display: none; font-size: 28px; cursor: pointer; color: #fff; }
 
-/* ==========================
-   5. HERO SECTION
-========================== */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: radial-gradient(circle at top right, #12376d 0%, transparent 35%),
-                radial-gradient(circle at left, #0b1f3a 0%, transparent 40%), #07111F;
-}
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-.hero-tag {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 40px;
-    background: rgba(212, 175, 55, .12);
-    border: 1px solid rgba(212, 175, 55, .4);
-    color: var(--gold);
-    margin-bottom: 25px;
-}
-.hero h1 {
-    font-size: 64px;
-    line-height: 1.15;
-    margin-bottom: 25px;
-    font-weight: 800;
-}
+/* HERO */
+.hero { min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, #12376d 0%, transparent 35%), radial-gradient(circle at left, #0b1f3a 0%, transparent 40%), #07111F; }
+.hero-container { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.hero-tag { display: inline-block; padding: 10px 20px; border-radius: 40px; background: rgba(212, 175, 55, .12); border: 1px solid rgba(212, 175, 55, .4); color: var(--gold); margin-bottom: 25px; }
+.hero h1 { font-size: 64px; line-height: 1.15; margin-bottom: 25px; font-weight: 800; }
 .hero h1 span { color: var(--gold); }
-.hero p {
-    font-size: 18px;
-    color: #d0d0d0;
-    margin-bottom: 35px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 35px;
-    flex-wrap: wrap;
-}
-.primary-btn, .secondary-btn {
-    padding: 16px 34px;
-    border-radius: 50px;
-    font-weight: 700;
-    transition: .35s ease;
-}
-.primary-btn {
-    background: linear-gradient(135deg, #D4AF37, #F7D774);
-    color: #111;
-}
+.hero p { font-size: 18px; color: #d0d0d0; margin-bottom: 35px; }
+.hero-buttons { display: flex; gap: 20px; margin-bottom: 35px; flex-wrap: wrap; }
+.primary-btn, .secondary-btn { padding: 16px 34px; border-radius: 50px; font-weight: 700; transition: .35s ease; cursor: pointer; display: inline-block; text-align: center; }
+.primary-btn { background: linear-gradient(135deg, #D4AF37, #F7D774); color: #111; }
 .secondary-btn { border: 1px solid rgba(255, 255, 255, .15); }
-
-.hero-features {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-}
+.primary-btn:hover, .secondary-btn:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0, 0, 0, .35); }
+.hero-features { display: flex; gap: 25px; flex-wrap: wrap; }
 .feature { display: flex; align-items: center; gap: 8px; color: #ddd; }
 .feature i { color: var(--gold); }
 
+/* CARDS & GRIDS */
+.glass-card { background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .12); backdrop-filter: blur(20px); padding: 35px; border-radius: 25px; box-shadow: var(--shadow); }
+.glass-card h3 { font-size: 28px; margin-bottom: 15px; color: var(--gold); }
+.glass-card p { margin-bottom: 25px; color: #d0d0d0; }
+.services { background: #07111F; }
+.services-grid, .why-grid, .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.service-card, .why-card, .process-card, .stat-card, .testimonial-card, .contact-info, .contact-form, .faq-item { background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .08); border-radius: 22px; padding: 35px; transition: .4s; position: relative; overflow: hidden; }
+.service-card i, .why-card i, .process-card i { font-size: 48px; color: var(--gold); margin-bottom: 25px; display: block; }
+.service-card h3, .why-card h3, .process-card h3 { font-size: 24px; margin-bottom: 15px; }
+.service-card p, .why-card p, .process-card p { color: #cfcfcf; margin-bottom: 25px; }
+.service-card a { display: inline-block; padding: 12px 24px; border-radius: 40px; background: linear-gradient(135deg, #D4AF37, #F7D774); color: #111; font-weight: 700; transition: .35s; }
+.service-card a:hover { transform: translateY(-3px); }
+.service-card:hover, .why-card:hover, .process-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 40px rgba(212, 175, 55, .18); }
+.trust-bar { background: #0b182d; padding: 35px 0; }
+.trust-bar .container, .stats .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+.trust-item, .stat-card { text-align: center; padding: 25px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .08); border-radius: 18px; transition: .35s; }
+.trust-item:hover, .stat-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 15px 35px rgba(212, 175, 55, .15); }
+.trust-item h2, .stat-card h2 { color: var(--gold); font-size: 38px; margin-bottom: 10px; }
+.step { position: absolute; top: 20px; right: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #D4AF37, #F7D774); color: #111; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 700; }
+
+/* FORMS & INPUTS */
+.calculator { background: #081625; }
+.calculator-box, .eligibility-box { background: rgba(255, 255, 255, .05); padding: 40px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, .08); }
+.glass-card input, .glass-card select, .glass-card textarea, .calculator-box input, .eligibility-box input, .eligibility-box select, .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 16px; margin-bottom: 18px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1); border-radius: 12px; color: #fff; font-size: 15px; outline: none; }
+input:focus, textarea:focus, select:focus { border: 1px solid var(--gold); box-shadow: 0 0 15px rgba(212, 175, 55, .35); }
+.glass-card button, .calculator-box button, .eligibility-box button, .contact-form button { width: 100%; padding: 16px; border: none; border-radius: 14px; background: linear-gradient(135deg, #D4AF37, #F7D774); font-size: 17px; font-weight: 700; color: #111; cursor: pointer; transition: .3s; }
+.glass-card button:hover, .calculator-box button:hover, .eligibility-box button:hover, .contact-form button:hover { transform: translateY(-3px); }
+#emiResult { margin-top: 25px; text-align: center; color: var(--gold); font-size: 24px; }
+
+/* FAQ & FOOTER */
+.faq-container { max-width: 900px; margin: auto; }
+.faq-item { padding: 25px; margin-bottom: 20px; cursor: pointer; }
+.faq-item:hover { border-color: var(--gold); }
+.faq-item h3 { margin-bottom: 12px; color: #fff; }
+.faq-item p { color: #d2d2d2; display: none; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.contact-info h3 { margin-bottom: 20px; color: var(--gold); }
+.contact-info p { margin-bottom: 18px; color: #ddd; }
+footer { background: #030b15; padding: 70px 0 25px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+.footer-grid h3 { margin-bottom: 20px; color: var(--gold); }
+.footer-grid p, .footer-grid a { color: #cfcfcf; margin-bottom: 12px; display: block; }
+footer hr { margin: 45px 0 20px; border: none; height: 1px; background: rgba(255, 255, 255, .08); }
+.copyright { text-align: center; color: #999; }
+
+/* FLOATING BUTTONS */
+.floating-whatsapp, .floating-call { position: fixed; width: 60px; height: 60px; right: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 24px; z-index: 999; transition: .35s; }
+.floating-whatsapp { background: #25D366; bottom: 90px; }
+.floating-call { background: var(--gold); color: #111; bottom: 20px; }
+.floating-whatsapp:hover, .floating-call:hover { transform: scale(1.1); }
+#topBtn { position: fixed; left: 20px; bottom: 20px; width: 55px; height: 55px; border: none; border-radius: 50%; background: linear-gradient(135deg, #D4AF37, #F7D774); color: #111; font-size: 22px; cursor: pointer; box-shadow: 0 10px 25px rgba(0, 0, 0, .35); display: none; align-items: center; justify-content: center; z-index: 998; }
+
 /* ==========================
-   6. CARDS (GLASS &
+   URGENT MOBILE FIXES
+========================== */
+@media (max-width: 992px) {
+    .hero-container, .contact-grid { grid-template-columns: 1fr; }
+    .nav-links, .nav-buttons { display: none; }
+    .menu-btn { display: block; }
+    .stats .container, .trust-bar .container { grid-template-columns: repeat(2, 1fr); }
+    .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background: #07111F; padding: 25px; border-top: 1px solid var(--gold); text-align: center; z-index: 999; gap: 20px; }
+}
+
+@media (max-width: 768px) {
+    section { padding: 60px 0; }
+    .top-bar .container { font-size: 11px; flex-direction: column; gap: 10px; text-align: center; }
+    .logo { font-size: 22px !important; white-space: nowrap; }
+    .hero h1 { font-size: 36px !important; line-height: 1.2 !important; }
+    .hero p { font-size: 15px; }
+    .hero-tag { font-size: 12px; }
+    .primary-btn, .secondary-btn { width: 100%; text-align: center; }
+    .services-grid, .why-grid, .process-grid, .stats .container, .trust-bar .container { grid-template-columns: 1fr; }
+    .contact-form, .contact-info, .glass-card, .calculator-box, .eligibility-box { padding: 25px; }
+    .floating-whatsapp, .floating-call, #topBtn { width: 50px; height: 50px; font-size: 20px; }
+}
