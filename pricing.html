@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | QwickDesk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 50px; }
+        .price-card { background: var(--white); padding: 60px 40px; border-radius: 40px; text-align: center; border: 1px solid #e2e8f0; box-shadow: var(--shadow-soft); position: relative; transition: var(--transition); }
+        .price-card.popular { transform: scale(1.05); border: 2px solid var(--primary-light); box-shadow: var(--shadow-heavy); z-index: 10; }
+        .price-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-heavy); }
+        .price-card.popular:hover { transform: scale(1.05) translateY(-10px); }
+        
+        .badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 8px 25px; border-radius: 30px; font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
+        
+        .price-card h3 { font-size: 2rem; margin-bottom: 20px; }
+        .price { font-size: 4.5rem; font-weight: 800; color: var(--primary); margin-bottom: 30px; line-height: 1; display: flex; justify-content: center; letter-spacing: -2px; }
+        .price span { font-size: 2rem; margin-top: 10px; margin-right: 5px; color: var(--primary-light); }
+        
+        .features { text-align: left; margin-bottom: 40px; }
+        .features li { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 1.1rem; font-weight: 600; color: var(--text-main); }
+        .features li i { color: var(--secondary); font-size: 1.3rem; background: rgba(16, 185, 129, 0.1); padding: 5px; border-radius: 50%; }
+
+        @media (max-width: 1024px) {
+            .price-card.popular { transform: scale(1); }
+            .price-card.popular:hover { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">QwickDesk<span>.</span></div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Our Expertise</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="pricing.html" class="btn btn-primary" style="padding: 10px 24px;">Packages</a>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding container">
+        <div class="section-title reveal">
+            <h1 class="text-gradient" style="font-size: 4rem;">Transparent Investment</h1>
+            <p style="margin-top: 15px;">High-value assets at costs designed for serious businesses.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="price-card reveal delay-1">
+                <h3>Starter</h3>
+                <div class="price"><span>₹</span>699</div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> 1 Page Landing Site</li>
+                    <li><i class="fas fa-check"></i> Mobile Auto-Adjust</li>
+                    <li><i class="fas fa-check"></i> WhatsApp Float</li>
+                    <li><i class="fas fa-check"></i> Basic Speed Setup</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline" style="width: 100%;">Select Starter</a>
+            </div>
+
+            <div class="price-card popular reveal">
+                <div class="badge">Most Popular</div>
+                <h3>Growth</h3>
+                <div class="price"><span>₹</span>999</div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Multi-Page Structure</li>
+                    <li><i class="fas fa-check"></i> Lead Capture Form</li>
+                    <li><i class="fas fa-check"></i> Google Maps Setup</li>
+                    <li><i class="fas fa-check"></i> Advanced Animations</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary" style="width: 100%; padding: 20px;">Select Growth <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="price-card reveal delay-2">
+                <h3>Pro</h3>
+                <div class="price"><span>₹</span>1499</div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Premium Graphic UI</li>
+                    <li><i class="fas fa-check"></i> Local SEO Tags</li>
+                    <li><i class="fas fa-check"></i> Glassmorphism FX</li>
+                    <li><i class="fas fa-check"></i> Priority Delivery</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline" style="width: 100%;">Select Pro</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/917249828812" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 QwickDesk Solutions.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
