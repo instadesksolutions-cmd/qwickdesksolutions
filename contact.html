@@ -34,11 +34,12 @@
         .input-group input, .input-group select, .input-group textarea { width: 100%; padding: 18px; border: 2px solid #e2e8f0; border-radius: 16px; background: #f8fafc; font-size: 1.05rem; font-weight: 500; outline: none; transition: 0.3s; color: var(--dark); }
         .input-group input:focus, .input-group select:focus, .input-group textarea:focus { border-color: var(--primary-light); background: white; box-shadow: 0 0 0 4px rgba(37,99,235,0.1); }
         
-        /* The New Success Message (NO REDIRECT) */
-        #success-message { display: none; text-align: center; padding: 80px 40px; background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 30px; box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1); }
-        #success-message i { font-size: 80px; color: var(--secondary); margin-bottom: 25px; }
-        #success-message h3 { font-size: 2.5rem; color: #064e3b; margin-bottom: 15px; }
-        #success-message p { font-size: 1.2rem; color: #047857; font-weight: 600; line-height: 1.6; }
+        /* The New Explicit Success Message */
+        #success-message { display: none; text-align: center; padding: 60px 40px; background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 30px; box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1); }
+        #success-message i { font-size: 70px; color: var(--secondary); margin-bottom: 15px; }
+        #success-message h3 { font-size: 2.2rem; color: #064e3b; margin-bottom: 10px; font-weight: 900; }
+        #success-message h4 { font-size: 1.3rem; color: #047857; margin-bottom: 20px; font-weight: 700; border-bottom: 2px solid #a7f3d0; display: inline-block; padding-bottom: 5px; }
+        #success-message p { font-size: 1.1rem; color: #065f46; font-weight: 500; line-height: 1.7; }
 
         @media (max-width: 991px) {
             .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
@@ -101,11 +102,12 @@
 
             <div class="form-card reveal delay-1">
                 
-                <!-- Success State Box -->
+                <!-- Explicit Success State Box -->
                 <div id="success-message">
                     <i class="fas fa-check-circle"></i>
-                    <h3>Details Received!</h3>
-                    <p>Your project brief and payment reference have been securely sent to our team.<br>We will verify the details and connect with you shortly.</p>
+                    <h3>Form Submitted!</h3>
+                    <h4>Payment Under Verification</h4>
+                    <p>We have successfully received your project requirements and UTR number.<br>Our billing team will verify your payment and contact you shortly to initiate the project.</p>
                 </div>
                 
                 <!-- Form Box Wrapper -->
@@ -152,7 +154,7 @@
                         </div>
                         
                         <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%; padding: 20px;">
-                            Submit & Confirm Payment <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                            Submit Form & Payment <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
                         </button>
                         <p id="error-msg" style="display:none; color: var(--accent); margin-top: 15px; text-align: center; font-weight: 700;">Oops! Submission failed. Please try again.</p>
                     </form>
