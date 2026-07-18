@@ -2,59 +2,56 @@
 const menuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
-menuBtn.addEventListener('click', () => {
-    if(navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-    } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '70px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#fff';
-        navLinks.style.padding = '20px';
-        navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
-    }
-});
+if(menuBtn) {
+    menuBtn.addEventListener('click', () => {
+        if(navLinks.style.display === 'flex') {
+            navLinks.style.display = 'none';
+        } else {
+            navLinks.style.display = 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '75px';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.background = 'rgba(255, 255, 255, 0.98)';
+            navLinks.style.padding = '30px 20px';
+            navLinks.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+            navLinks.style.backdropFilter = 'blur(10px)';
+        }
+    });
+}
 
 // --- Pre-select package from pricing table ---
 function selectPackage(packageName) {
     const select = document.getElementById('packageSelect');
-    select.value = packageName;
+    if(select) {
+        select.value = packageName;
+    }
 }
 
 // --- Form Flow Logic ---
 const formStep1 = document.getElementById('projectForm');
 const paymentStep = document.getElementById('paymentStep');
 
-// Handle Step 1 Submission
-formStep1.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get values from Step 1
-    const name = document.getElementById('fullName').value;
-    const whatsapp = document.getElementById('whatsapp').value;
-    
-    // Set values to read-only inputs in Step 2 for confirmation
-    document.getElementById('confirmName').value = name;
-    document.getElementById('confirmWhatsapp').value = whatsapp;
-    
-    // Hide Step 1, Show Step 2
-    formStep1.classList.add('hidden');
-    paymentStep.classList.remove('hidden');
-    
-    // Scroll smoothly to form top
-    document.getElementById('onboarding').scrollIntoView({ behavior: 'smooth' });
-});
+if(formStep1 && paymentStep) {
+    formStep1.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('fullName').value;
+        document.getElementById('confirmName').value = name;
+        
+        formStep1.classList.add('hidden');
+        paymentStep.classList.remove('hidden');
+        
+        document.getElementById('onboarding').scrollIntoView({ behavior: 'smooth' });
+    });
+}
 
-// Handle Back Button from Step 2
 function backToStep1() {
     paymentStep.classList.add('hidden');
     formStep1.classList.remove('hidden');
 }
 
-// Handle UPI Copy
 function copyUPI() {
     const upiText = document.getElementById('upiId').innerText;
     navigator.clipboard.writeText(upiText).then(() => {
@@ -62,33 +59,35 @@ function copyUPI() {
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
         btn.style.background = '#10b981';
+        btn.style.color = '#fff';
         
         setTimeout(() => {
             btn.innerHTML = originalText;
-            btn.style.background = ''; // reset to CSS default
+            btn.style.background = ''; 
+            btn.style.color = '';
         }, 2000);
     }).catch(err => {
-        alert('Failed to copy text. Please copy manually: ' + upiText);
+        alert('Failed to copy. UPI ID is: ' + upiText);
     });
 }
 
-// Handle Final Submit
 function submitFinal() {
     const utr = document.getElementById('utrNumber').value.trim();
     
     if(utr.length < 5) {
-        alert('Please enter a valid UTR / Reference Number to confirm your payment.');
+        alert('Please enter a valid UTR / Reference Number to confirm.');
         return;
     }
     
-    // Hide payment step, show success message
     paymentStep.classList.add('hidden');
-    
     const successMsg = document.getElementById('successMessage');
     successMsg.classList.remove('hidden');
     
-    // Reset message and interface after showing success
     setTimeout(() => {
-        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> We will contact you shortly on WhatsApp!';
-    }, 3000);
+        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Verified! Redirecting to WhatsApp...';
+        // Auto redirect to WhatsApp after successful entry
+        setTimeout(() => {
+             window.location.href = "https://wa.me/917249828812?text=Hi,%20I%20have%20submitted%20my%20project%20details%20and%20paid%20the%20amount.%20My%20UTR%20is:%20" + utr;
+        }, 1500);
+    }, 2000);
 }
