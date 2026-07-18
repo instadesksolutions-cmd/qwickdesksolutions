@@ -1,109 +1,94 @@
-/* ========================================================
-   QWICKDESK SOLUTIONS - CORE JAVASCRIPT
-======================================================== */
+// --- Mobile Menu Toggle ---
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    /* --- 1. NAVBAR SCROLL EFFECT --- */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 30) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    /* --- 2. MOBILE MENU TOGGLE --- */
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const icon = hamburger.querySelector('i');
-            
-            if (navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close menu when clicking a link
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.querySelector('i').classList.remove('fa-xmark');
-                hamburger.querySelector('i').classList.add('fa-bars');
-            });
-        });
-    }
-
-    /* --- 3. EMI CALCULATOR --- */
-    const btnEmi = document.getElementById('btnEmi');
-    if (btnEmi) {
-        btnEmi.addEventListener('click', () => {
-            const amount = parseFloat(document.getElementById('emiAmount').value);
-            const rate = parseFloat(document.getElementById('emiRate').value);
-            const years = parseFloat(document.getElementById('emiYears').value);
-            const resultBox = document.getElementById('emiResult');
-
-            if (isNaN(amount) || isNaN(rate) || isNaN(years) || amount <= 0 || rate <= 0 || years <= 0) {
-                resultBox.style.color = "#ff4d4d";
-                resultBox.style.borderColor = "#ff4d4d";
-                resultBox.innerHTML = "Please enter valid numbers in all fields.";
-                return;
-            }
-
-            const monthlyRate = rate / 12 / 100;
-            const months = years * 12;
-            const emi = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
-
-            resultBox.style.color = "#d4af37";
-            resultBox.style.borderColor = "#d4af37";
-            const formattedEmi = Math.round(emi).toLocaleString('en-IN');
-            resultBox.innerHTML = `Estimated Monthly EMI: <strong>₹ ${formattedEmi}</strong>`;
-        });
-    }
-
-    /* --- 4. ELIGIBILITY CHECKER --- */
-    const btnElig = document.getElementById('btnElig');
-    if (btnElig) {
-        btnElig.addEventListener('click', () => {
-            const income = parseFloat(document.getElementById('eligIncome').value);
-            const emi = parseFloat(document.getElementById('eligEmi').value) || 0; 
-            const profile = document.getElementById('eligProfile').value;
-            const resultBox = document.getElementById('eligResult');
-
-            if (isNaN(income) || income <= 0) {
-                resultBox.style.color = "#ff4d4d";
-                resultBox.style.borderColor = "#ff4d4d";
-                resultBox.innerHTML = "Please enter a valid Monthly Income.";
-                return;
-            }
-
-            const emiRatio = (emi / income) * 100;
-            resultBox.style.borderColor = "#25d366";
-            resultBox.style.color = "#25d366";
-            
-            if (emiRatio > 60) {
-                resultBox.style.color = "#f7d774";
-                resultBox.style.borderColor = "#f7d774";
-                resultBox.innerHTML = `Profile: ${profile} <br> High existing EMI. Our expert will contact you for a custom solution.`;
-            } else {
-                resultBox.innerHTML = `Profile: ${profile} <br> Good chances of approval! Our expert will call you shortly.`;
-            }
-        });
-    }
-
-    /* --- 5. FOOTER DYNAMIC YEAR --- */
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+menuBtn.addEventListener('click', () => {
+    if(navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+    } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '70px';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.background = '#fff';
+        navLinks.style.padding = '20px';
+        navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
     }
 });
 
+// --- Pre-select package from pricing table ---
+function selectPackage(packageName) {
+    const select = document.getElementById('packageSelect');
+    select.value = packageName;
+}
+
+// --- Form Flow Logic ---
+const formStep1 = document.getElementById('projectForm');
+const paymentStep = document.getElementById('paymentStep');
+
+// Handle Step 1 Submission
+formStep1.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get values from Step 1
+    const name = document.getElementById('fullName').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    
+    // Set values to read-only inputs in Step 2 for confirmation
+    document.getElementById('confirmName').value = name;
+    document.getElementById('confirmWhatsapp').value = whatsapp;
+    
+    // Hide Step 1, Show Step 2
+    formStep1.classList.add('hidden');
+    paymentStep.classList.remove('hidden');
+    
+    // Scroll smoothly to form top
+    document.getElementById('onboarding').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Handle Back Button from Step 2
+function backToStep1() {
+    paymentStep.classList.add('hidden');
+    formStep1.classList.remove('hidden');
+}
+
+// Handle UPI Copy
+function copyUPI() {
+    const upiText = document.getElementById('upiId').innerText;
+    navigator.clipboard.writeText(upiText).then(() => {
+        const btn = document.querySelector('.btn-copy');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.style.background = '#10b981';
+        
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = ''; // reset to CSS default
+        }, 2000);
+    }).catch(err => {
+        alert('Failed to copy text. Please copy manually: ' + upiText);
+    });
+}
+
+// Handle Final Submit
+function submitFinal() {
+    const utr = document.getElementById('utrNumber').value.trim();
+    
+    if(utr.length < 5) {
+        alert('Please enter a valid UTR / Reference Number to confirm your payment.');
+        return;
+    }
+    
+    // Hide payment step, show success message
+    paymentStep.classList.add('hidden');
+    
+    const successMsg = document.getElementById('successMessage');
+    successMsg.classList.remove('hidden');
+    
+    // Reset message and interface after showing success
+    setTimeout(() => {
+        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> We will contact you shortly on WhatsApp!';
+    }, 3000);
+}
