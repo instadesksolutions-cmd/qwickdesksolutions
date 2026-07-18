@@ -3,233 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QwickDesk Solutions | Premium Business & Financial Services</title>
+    <title>QwickDesk. | Premium Web Design & Digital Solutions</title>
+    <meta name="description" content="High-end professional web design, SEO, and digital solutions for your business. Transform visitors into paying customers.">
+    <meta name="keywords" content="Web Design, SEO, Business Website, Landing Page, QwickDesk">
     
-    <meta name="description" content="QwickDesk Solutions: One destination for Loans, Insurance, Business Registration, and Digital Marketing across Pan India.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="container top-bar-flex">
-            <div class="contact-info">
-                <a href="tel:+917249828812"><i class="fa-solid fa-phone"></i> +91 7249828812</a>
-                <a href="mailto:qwickdesksolutions@outlook.com" class="hide-mobile"><i class="fa-solid fa-envelope"></i> qwickdesksolutions@outlook.com</a>
-            </div>
-            <div class="location-info">
-                <span><i class="fa-solid fa-location-dot"></i> Pan India</span>
-                <span class="hide-mobile"><i class="fa-regular fa-clock"></i> 9 AM - 9 PM</span>
-            </div>
-        </div>
-    </div>
-
-    <nav class="navbar" id="navbar">
-        <div class="container nav-flex">
-            <a href="#home" class="logo">QwickDesk <span>Solutions</span></a>
-            
-            <ul class="nav-links" id="navMenu">
-                <li><a href="#home">Home</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">QwickDesk<span>.</span></a>
+            <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#tools">Tools</a></li>
+                <li><a href="#packages">Packages</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="mobile-only"><a href="https://wa.me/917249828812" class="btn-solid-green"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a></li>
             </ul>
-            
             <div class="nav-actions">
-                <a href="tel:+917249828812" class="btn-outline-gold"><i class="fa-solid fa-phone"></i> Call Now</a>
-            </div>
-            
-            <div class="hamburger" id="hamburger">
-                <i class="fa-solid fa-bars"></i>
+                <a href="#packages" class="btn-nav">Packages</a>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="container hero-grid">
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-container">
             <div class="hero-content">
-                <span class="badge"><i class="fa-solid fa-award"></i> Trusted Business Partner</span>
-                <h1>One Destination for <span>Business, Financial</span> & Digital Solutions</h1>
-                <p>Expert assistance for Loans, Insurance, GST, MSME, Demat, Crypto, and Marketing across India. Fast, secure, and reliable.</p>
-                <div class="hero-features">
-                    <span><i class="fa-solid fa-bolt"></i> Fast Processing</span>
-                    <span><i class="fa-solid fa-shield-halved"></i> Trusted Experts</span>
-                    <span><i class="fa-solid fa-globe"></i> Pan India</span>
+                <div class="badge">🚀 Elevate Your Online Presence</div>
+                <h1>Perfect websites for shops, consultancies, and classes.</h1>
+                <p>Turn your online visitors into paying customers starting today. We build high-performance, SEO-optimized, and visually stunning digital experiences.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn-primary">Our Services <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://wa.me/917249828812" class="btn-outline-light"><i class="fab fa-whatsapp"></i> Chat Now</a>
                 </div>
             </div>
+            <div class="hero-image">
+                <!-- Decorative Graphic Element -->
+                <div class="graphic-card">
+                    <div class="mac-header"><i></i><i></i><i></i></div>
+                    <div class="mac-body">
+                        <h3>High-End UI/UX</h3>
+                        <div class="code-line w-80"></div>
+                        <div class="code-line w-60"></div>
+                        <div class="code-line w-90"></div>
+                        <br>
+                        <div class="btn-mockup">Start Project</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Deep Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our <span class="text-gradient">Premium Services</span></h2>
+                <p>Click on any service to explore our deeply crafted digital solutions.</p>
+            </div>
             
-            <div class="hero-form card-glass">
-                <h3>Quick Enquiry</h3>
-                <p>Fill the form & get a callback instantly.</p>
+            <div class="services-grid">
+                <!-- Service 1 (Linked) -->
+                <a href="web-design.html" class="service-card">
+                    <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Modern Web Design</h3>
+                    <p>High-graphic, modern UI websites built to capture attention and drive conversions. Fully responsive across all mobile and desktop devices.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Custom UI/UX Interface</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Mobile Adjustable</li>
+                        <li><i class="fas fa-check-circle"></i> Fast Loading Speeds</li>
+                    </ul>
+                    <div class="read-more-btn mt-3 text-blue font-bold">Explore Details <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- Service 2 (Linked) -->
+                <a href="seo-services.html" class="service-card">
+                    <div class="icon-box"><i class="fas fa-search"></i></div>
+                    <h3>Static & Dynamic SEO</h3>
+                    <p>Advanced SEO strategies to rank your website on Google. We optimize meta tags, structure, and content to bring organic traffic directly to your business.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Deep Keyword Research</li>
+                        <li><i class="fas fa-check-circle"></i> Google Maps Setup</li>
+                        <li><i class="fas fa-check-circle"></i> Performance Tuning</li>
+                    </ul>
+                    <div class="read-more-btn mt-3 text-blue font-bold">Explore Details <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- Service 3 (Linked) -->
+                <a href="lead-generation.html" class="service-card">
+                    <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Digital Lead Generation</h3>
+                    <p>Data-driven marketing campaigns designed to maximize your reach. We integrate highly effective contact forms and WhatsApp funnels.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Lead Capture Forms</li>
+                        <li><i class="fas fa-check-circle"></i> Conversion Tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Instant Callbacks</li>
+                    </ul>
+                    <div class="read-more-btn mt-3 text-blue font-bold">Explore Details <i class="fas fa-arrow-right"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Choose <span class="text-gradient">Starter</span></h2>
+                <p>Transparent pricing tailored for your business success.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Growth Package (Most Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Growth</h3>
+                    <h2 class="price">₹999</h2>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle text-success"></i> Multi-Page Structure</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Lead Generation Form</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Google Maps Setup</li>
+                        <li><i class="fas fa-check-circle text-success"></i> SEO Optimized</li>
+                    </ul>
+                    <a href="#onboarding" class="btn-primary w-100" onclick="selectPackage('Growth')">Choose Growth</a>
+                </div>
+
+                <!-- Custom Package -->
+                <div class="pricing-card">
+                    <h3>Enterprise / Custom</h3>
+                    <h2 class="price">Let's Talk</h2>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle text-success"></i> E-Commerce Setup</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Payment Gateway</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Advanced Dashboards</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Custom Graphics</li>
+                    </ul>
+                    <a href="#onboarding" class="btn-outline-dark w-100" onclick="selectPackage('Custom')">Start Custom Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding & Payment Section -->
+    <section id="onboarding" class="section bg-light">
+        <div class="container">
+            <div class="onboarding-wrapper">
                 
-                <form action="https://formsubmit.co/qwickdesksolutions@outlook.com" method="POST" id="leadForm">
-                    <input type="hidden" name="_subject" value="New Lead from QwickDesk Website!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
+                <!-- Left: Direct Lines -->
+                <div class="contact-info-panel">
+                    <h2>Direct Lines</h2>
+                    <p>Prefer talking directly? Use the details below to reach out instantly.</p>
                     
-                    <input type="text" name="Name" class="input-field" placeholder="Full Name" required>
-                    <input type="tel" name="Mobile" class="input-field" placeholder="Mobile Number" required>
-                    
-                    <div class="input-row">
-                        <select name="State" class="input-field" required>
-                            <option value="" disabled selected>Select State</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Gujarat">Gujarat</option>
-                            <option value="Delhi">Delhi</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <input type="text" name="District" class="input-field" placeholder="District" required>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            <h4>Voice Call</h4>
+                            <p>+91 7249828812</p>
+                        </div>
                     </div>
                     
-                    <select name="Service_Required" class="input-field" required>
-                        <option value="" disabled selected>Select Service</option>
-                        <option value="Loans">Personal / Business Loan</option>
-                        <option value="Insurance">Insurance Services</option>
-                        <option value="Business Registration">Business Registration</option>
-                        <option value="Investment & Crypto">Demat / Crypto</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-text">
+                            <h4>WhatsApp Chat</h4>
+                            <p>+91 7249828812</p>
+                        </div>
+                    </div>
                     
-                    <button type="submit" class="btn-solid-gold w-100">Get Free Consultation</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Premium Business Solutions</h2>
-                <p>Everything your business needs to grow, secured under one roof.</p>
-            </div>
-            
-            <div class="service-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-money-bill-wave icon-main"></i>
-                    <h3>Loan Services</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> Personal & Business Loan</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Home & Vehicle Loan</li>
-                        <li><i class="fa-solid fa-circle-check"></i> MSME & Mudra Loan</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-shield-heart icon-main"></i>
-                    <h3>Insurance Services</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> Life & Health Insurance</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Motor & Business Policy</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Claim Support & Renewal</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-file-signature icon-main"></i>
-                    <h3>Business Registration</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> GST & MSME Registration</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Shop Act & FSSAI</li>
-                        <li><i class="fa-solid fa-circle-check"></i> DSC & IEC Documentation</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-chart-line icon-main"></i>
-                    <h3>Investments & Accounts</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> Demat & Trading Account</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Mutual Funds & SIP</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Crypto Account Handling</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-bullhorn icon-main"></i>
-                    <h3>Digital Marketing</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> Social Media Management</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Google Business Profile</li>
-                        <li><i class="fa-solid fa-circle-check"></i> B2B Lead Generation</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-laptop icon-main"></i>
-                    <h3>Government Services</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> PAN Card & Passport</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Income & Birth Certificate</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Online Form Filling</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="tools" id="tools">
-        <div class="container">
-            <div class="section-title">
-                <h2>Financial Tools</h2>
-                <p>Calculate your EMIs and check your loan eligibility instantly.</p>
-            </div>
-            
-            <div class="tools-grid">
-                <div class="tool-card card-glass">
-                    <h3 class="tool-heading">EMI Calculator</h3>
-                    <input type="number" id="emiAmount" class="input-field" placeholder="Loan Amount (₹)">
-                    <div class="input-row">
-                        <input type="number" id="emiRate" class="input-field" placeholder="Interest Rate (%)">
-                        <input type="number" id="emiYears" class="input-field" placeholder="Tenure (Years)">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h4>Email Inquiry</h4>
+                            <p>qwickdesksolutions@outlook.com</p>
+                        </div>
                     </div>
-                    <button id="btnEmi" class="btn-solid-gold w-100">Calculate EMI</button>
-                    <div class="result-box" id="emiResult">Your EMI will appear here</div>
                 </div>
 
-                <div class="tool-card card-glass">
-                    <h3 class="tool-heading">Eligibility Checker</h3>
-                    <input type="number" id="eligIncome" class="input-field" placeholder="Monthly Income (₹)">
-                    <div class="input-row">
-                        <input type="number" id="eligEmi" class="input-field" placeholder="Existing EMI (if any)">
-                        <select id="eligProfile" class="input-field">
-                            <option value="Salaried">Salaried</option>
-                            <option value="Self-Employed">Self-Employed</option>
-                        </select>
+                <!-- Right: Multi-Step Form -->
+                <div class="form-panel">
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="success-banner hidden">
+                        <i class="fas fa-check-circle"></i> Awesome! Your details have been received.
                     </div>
-                    <button id="btnElig" class="btn-solid-gold w-100">Check Now</button>
-                    <div class="result-box" id="eligResult">Check your loan capability</div>
+
+                    <!-- STEP 1: Details -->
+                    <form id="projectForm" class="form-step active">
+                        <h3 class="form-title">Start Your Project</h3>
+                        
+                        <div class="input-group">
+                            <label>Business / Full Name</label>
+                            <input type="text" id="fullName" placeholder="E.g. Sharma Enterprise" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>WhatsApp Number</label>
+                            <input type="tel" id="whatsapp" placeholder="+91" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Desired Package</label>
+                            <select id="packageSelect" required>
+                                <option value="" disabled selected>-- Select Requirement --</option>
+                                <option value="Starter">Starter Package</option>
+                                <option value="Growth">Growth Package (₹999)</option>
+                                <option value="Custom">Custom Requirement</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Project Brief</label>
+                            <textarea id="brief" rows="3" placeholder="Briefly explain what you need..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-100">Proceed to Payment <i class="fas fa-arrow-right"></i></button>
+                    </form>
+
+                    <!-- STEP 2: Secure Payment via UPI -->
+                    <div id="paymentStep" class="form-step hidden">
+                        <div class="payment-header-box">
+                            <h3 class="text-blue">Secure Payment via UPI</h3>
+                            
+                            <div class="qr-container">
+                                <p class="secure-text"><i class="fas fa-shield-alt"></i> Scan & Pay Securely</p>
+                                <!-- USER QR PNG GOES HERE -->
+                                <img src="images/qr.png" alt="Scan QR Code" id="qrCodeImage" onerror="this.src='https://via.placeholder.com/200x200?text=Upload+qr.png+in+images+folder'">
+                                
+                                <div class="upi-box">
+                                    <span id="upiId">7249828812@upi</span>
+                                    <button type="button" class="btn-copy" onclick="copyUPI()"><i class="fas fa-copy"></i> Copy ID</button>
+                                </div>
+                            </div>
+                            
+                            <p class="help-text">Scan the QR code or copy the UPI ID to make payment for your selected plan. Enter the UTR/Reference number below.</p>
+                        </div>
+
+                        <!-- Readonly details showing user what they filled -->
+                        <div class="readonly-details">
+                            <div class="input-group mt-3">
+                                <label>Business / Full Name</label>
+                                <input type="text" id="confirmName" readonly class="bg-gray">
+                            </div>
+                            <div class="input-group">
+                                <label>WhatsApp Number</label>
+                                <input type="text" id="confirmWhatsapp" readonly class="bg-gray">
+                            </div>
+                        </div>
+
+                        <div class="input-group mt-3">
+                            <label class="font-bold">Enter UTR / Reference Number</label>
+                            <input type="text" id="utrNumber" placeholder="E.g. 312345678901" required>
+                        </div>
+                        
+                        <div class="payment-actions">
+                            <button type="button" class="btn-outline-dark" onclick="backToStep1()">Back</button>
+                            <button type="button" class="btn-success flex-grow" onclick="submitFinal()">Confirm & Submit <i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer" id="contact">
-        <div class="container footer-grid">
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
             <div class="footer-brand">
-                <h2>QwickDesk <span>Solutions</span></h2>
-                <p>One Destination for Business, Financial & Digital Solutions across India.</p>
+                <h2>QwickDesk<span>.</span></h2>
+                <p>One Destination for Business, Financial & Digital Solutions across India. Fast, secure, and reliable.</p>
             </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fa-solid fa-phone"></i> +91 7249828812</p>
-                <p><i class="fa-brands fa-whatsapp"></i> +91 7249828812</p>
-                <p><i class="fa-solid fa-envelope"></i> qwickdesksolutions@outlook.com</p>
-                <p><i class="fa-solid fa-location-dot"></i> Pan India</p>
+            <div class="footer-links">
+                <p>&copy; 2026 QwickDesk Solutions. All Rights Reserved.</p>
+                <p class="small text-muted">Traffic proxied securely.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> QwickDesk Solutions. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/917249828812" class="float-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
