@@ -1,93 +1,108 @@
-// --- Mobile Menu Toggle ---
-const menuBtn = document.querySelector('.mobile-menu-btn');
+// 1. Mobile Menu Logic
+const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-if(menuBtn) {
-    menuBtn.addEventListener('click', () => {
-        if(navLinks.style.display === 'flex') {
-            navLinks.style.display = 'none';
+if(hamburger) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        if(navLinks.classList.contains('active')){
+            hamburger.innerHTML = '<i class="fas fa-times"></i>';
         } else {
-            navLinks.style.display = 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '75px';
-            navLinks.style.left = '0';
-            navLinks.style.width = '100%';
-            navLinks.style.background = 'rgba(255, 255, 255, 0.98)';
-            navLinks.style.padding = '30px 20px';
-            navLinks.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
-            navLinks.style.backdropFilter = 'blur(10px)';
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
 }
 
-// --- Pre-select package from pricing table ---
-function selectPackage(packageName) {
-    const select = document.getElementById('packageSelect');
-    if(select) {
-        select.value = packageName;
+// Close menu when link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        if(hamburger) hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
+
+// 2. Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if(nav) {
+        if (window.scrollY > 20) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    }
+});
+
+// 3. Scroll Reveal Animation
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 50; 
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
     }
 }
+window.addEventListener("scroll", reveal);
+reveal(); // Trigger on load
 
-// --- Form Flow Logic ---
-const formStep1 = document.getElementById('projectForm');
-const paymentStep = document.getElementById('paymentStep');
-
-if(formStep1 && paymentStep) {
-    formStep1.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('fullName').value;
-        document.getElementById('confirmName').value = name;
-        
-        formStep1.classList.add('hidden');
-        paymentStep.classList.remove('hidden');
-        
-        document.getElementById('onboarding').scrollIntoView({ behavior: 'smooth' });
-    });
-}
-
-function backToStep1() {
-    paymentStep.classList.add('hidden');
-    formStep1.classList.remove('hidden');
-}
-
+// 4. Copy UPI ID Function
 function copyUPI() {
-    const upiText = document.getElementById('upiId').innerText;
-    navigator.clipboard.writeText(upiText).then(() => {
-        const btn = document.querySelector('.btn-copy');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        btn.style.background = '#10b981';
-        btn.style.color = '#fff';
-        
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = ''; 
-            btn.style.color = '';
-        }, 2000);
-    }).catch(err => {
-        alert('Failed to copy. UPI ID is: ' + upiText);
-    });
+    var upiText = document.getElementById("upi-text");
+    if(upiText) {
+        navigator.clipboard.writeText(upiText.innerText).then(function() {
+            var copyBtn = document.getElementById("copy-btn-element");
+            var originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyBtn.style.background = "var(--secondary)";
+            copyBtn.style.color = "white";
+            
+            setTimeout(function() {
+                copyBtn.innerHTML = originalHTML;
+                copyBtn.style.background = "var(--primary-light)";
+            }, 3000);
+        });
+    }
 }
 
-function submitFinal() {
-    const utr = document.getElementById('utrNumber').value.trim();
-    
-    if(utr.length < 5) {
-        alert('Please enter a valid UTR / Reference Number to confirm.');
-        return;
-    }
-    
-    paymentStep.classList.add('hidden');
-    const successMsg = document.getElementById('successMessage');
-    successMsg.classList.remove('hidden');
-    
-    setTimeout(() => {
-        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Verified! Redirecting to WhatsApp...';
-        // Auto redirect to WhatsApp after successful entry
-        setTimeout(() => {
-             window.location.href = "https://wa.me/917249828812?text=Hi,%20I%20have%20submitted%20my%20project%20details%20and%20paid%20the%20amount.%20My%20UTR%20is:%20" + utr;
-        }, 1500);
-    }, 2000);
+// 5. Formspree Submission Logic (NO WhatsApp Auto-Redirect)
+const form = document.getElementById("qwickdesk-form");
+if(form) {
+    var successMessage = document.getElementById("success-message");
+    var submitBtn = document.getElementById("submit-btn");
+    var errorMsg = document.getElementById("error-msg");
+    var formBox = document.getElementById("form-container-box"); // Wrapper for smooth hide
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        
+        submitBtn.innerHTML = 'Processing Securely... <i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.disabled = true;
+
+        var data = new FormData(event.target);
+        
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                // Fade out form and fade in success message
+                formBox.style.display = "none";
+                successMessage.style.display = "block";
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                showError();
+            }
+        }).catch(error => {
+            showError();
+        });
+
+        function showError() {
+            errorMsg.style.display = "block";
+            submitBtn.innerHTML = 'Submit & Confirm Payment <i class="fas fa-paper-plane"></i>';
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = false;
+        }
+    });
 }
