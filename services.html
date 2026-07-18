@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise | QwickDesk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .header-bg { text-align: center; padding: 150px 5% 50px; background: linear-gradient(to bottom, var(--bg-main), #eff6ff); }
+        .header-bg h1 { font-size: 4.5rem; margin-bottom: 20px; }
+        
+        .expertise-card { display: flex; align-items: center; gap: 60px; background: var(--white); padding: 60px; border-radius: 40px; margin-bottom: 50px; box-shadow: var(--shadow-soft); border: 1px solid #e2e8f0; position: relative; overflow: hidden; }
+        .step-num { position: absolute; right: 20px; top: 0; font-size: 15rem; font-weight: 900; color: transparent; -webkit-text-stroke: 2px rgba(37,99,235,0.04); line-height: 1; user-select: none; }
+        
+        .content { position: relative; z-index: 2; }
+        .content h3 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
+        .content p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; }
+        
+        .bullet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .bullet-grid li { display: flex; align-items: center; gap: 15px; font-weight: 700; font-size: 1.05rem; }
+        .bullet-grid li i { color: var(--white); background: var(--secondary); padding: 8px; border-radius: 50%; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .header-bg h1 { font-size: 3rem; }
+            .expertise-card { padding: 40px 30px; flex-direction: column; }
+            .step-num { font-size: 8rem; }
+            .bullet-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">QwickDesk<span>.</span></div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Our Expertise</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="pricing.html" class="btn btn-primary" style="padding: 10px 24px;">Packages</a>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header-bg reveal">
+        <h1 class="text-gradient">Deep Digital Crafting</h1>
+        <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: auto;">We combine psychology, logic, and high-end aesthetics to build assets that establish authority.</p>
+    </header>
+
+    <section class="container" style="padding-bottom: 100px;">
+        
+        <div class="expertise-card reveal">
+            <div class="step-num">01</div>
+            <div class="content">
+                <h3>Visual Architecture & UI</h3>
+                <p>First impressions dictate conversions. We handcraft custom interfaces using brand psychology and glassmorphism. Every pixel is designed to guide the visitor's eye directly to your CTA.</p>
+                <ul class="bullet-grid">
+                    <li><i class="fas fa-check"></i> High-Resolution Graphics</li>
+                    <li><i class="fas fa-check"></i> Brand Psychology Colors</li>
+                    <li><i class="fas fa-check"></i> Glassmorphism Effects</li>
+                    <li><i class="fas fa-check"></i> Seamless Scroll Flow</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="expertise-card reveal delay-1">
+            <div class="step-num">02</div>
+            <div class="content">
+                <h3>Code Velocity & SEO</h3>
+                <p>A beautiful site is useless if it's slow. We write pure, structural code that loads instantly. This eliminates bounce rates and actively boosts your organic ranking on Google.</p>
+                <ul class="bullet-grid">
+                    <li><i class="fas fa-check"></i> Sub 2-Second Loads</li>
+                    <li><i class="fas fa-check"></i> Core Web Vitals Pass</li>
+                    <li><i class="fas fa-check"></i> Advanced Edge Caching</li>
+                    <li><i class="fas fa-check"></i> Structural SEO Tags</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="expertise-card reveal delay-2">
+            <div class="step-num">03</div>
+            <div class="content">
+                <h3>Lead Capture Systems</h3>
+                <p>Traffic without leads is a waste. We integrate intelligent capture systems. From floating communication buttons to highly secure data forms that link directly to your inbox.</p>
+                <ul class="bullet-grid">
+                    <li><i class="fas fa-check"></i> Secure Data Forms</li>
+                    <li><i class="fas fa-check"></i> Direct WhatsApp Triggers</li>
+                    <li><i class="fas fa-check"></i> Google Maps Embeds</li>
+                    <li><i class="fas fa-check"></i> Call-To-Action Strategy</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <a href="https://wa.me/917249828812" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 QwickDesk Solutions.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
