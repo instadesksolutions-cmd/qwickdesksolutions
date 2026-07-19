@@ -3,40 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & Plans | QwickDesk</title>
+    <title>Pricing | QwickDesk Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Premium Pricing Specific Styles */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 50px; }
-        .price-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); padding: 60px 40px; border-radius: 40px; text-align: center; border: 1px solid var(--glass-border); box-shadow: var(--shadow-soft); position: relative; }
+        .header-bg { text-align: center; padding: 150px 5% 50px; }
         
-        /* Popular Card Highlight */
-        .price-card.popular { transform: scale(1.05); border: 2px solid var(--primary-light); box-shadow: var(--shadow-heavy); z-index: 10; background: var(--white); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1250px; margin: 0 auto 100px; padding: 0 5%; align-items: center; }
+        
+        .price-card { background: white; padding: 50px 40px; border-radius: 30px; text-align: center; border: 1px solid #e2e8f0; box-shadow: var(--shadow-sm); position: relative; transition: var(--transition); display: flex; flex-direction: column; height: 100%; }
+        
+        /* The "Thoda Achha" Growth Card Setup */
+        .price-card.popular { transform: scale(1.05); border: 2px solid var(--primary-light); box-shadow: 0 25px 50px rgba(37, 99, 235, 0.15); z-index: 10; }
         .price-card.popular:hover { transform: scale(1.05) translateY(-10px); }
         
-        .badge-popular { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--accent), #e11d48); color: white; padding: 8px 25px; border-radius: 30px; font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 10px 20px rgba(244, 63, 94, 0.3); }
+        .badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 8px 24px; border-radius: 30px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; box-shadow: 0 5px 15px rgba(244, 63, 94, 0.4); }
         
-        .price-card h3 { font-size: 2.2rem; margin-bottom: 15px; }
-        .price { font-size: 4.5rem; font-weight: 900; color: var(--primary); margin-bottom: 20px; line-height: 1; display: flex; justify-content: center; letter-spacing: -2px; }
-        .price span { font-size: 2rem; margin-top: 15px; margin-right: 5px; color: var(--primary-light); font-weight: 700; }
-        .billing-cycle { color: var(--text-muted); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 30px; }
-        
-        .features { text-align: left; margin-bottom: 40px; }
-        .features li { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 1.05rem; font-weight: 600; color: var(--text-main); }
-        .features li i { color: var(--secondary); font-size: 1.1rem; background: rgba(16, 185, 129, 0.1); padding: 6px; border-radius: 50%; }
-        .features li.special { color: var(--primary-dark); font-weight: 800; }
-        .features li.special i { color: var(--primary-light); background: rgba(37, 99, 235, 0.1); }
+        .price-card h3 { font-size: 1.8rem; color: var(--dark); margin-bottom: 25px; }
+        .price { font-size: 4.5rem; font-weight: 800; color: var(--primary); margin-bottom: 30px; line-height: 1; display: flex; justify-content: center; align-items: flex-start; }
+        .price span { font-size: 2rem; margin-top: 10px; margin-right: 5px; }
 
-        @media (max-width: 1024px) {
+        .features { text-align: left; margin-bottom: 40px; flex-grow: 1; }
+        .features li { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; font-size: 1.05rem; font-weight: 600; color: var(--text-main); }
+        .features li i { color: var(--secondary); font-size: 1.3rem; }
+
+        @media (max-width: 991px) {
+            .pricing-grid { gap: 50px; }
             .price-card.popular { transform: scale(1); }
-            .price-card.popular:hover { transform: translateY(-10px); }
+            .price-card.popular:hover { transform: translateY(-5px); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Premium Navbar -->
     <nav class="navbar">
         <div class="logo">QwickDesk<span>.</span></div>
         <div class="nav-menu">
@@ -44,106 +43,64 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Our Expertise</a></li>
                 <li><a href="pricing.html" class="active">Pricing</a></li>
-                <li><a href="portfolio.html">Our Work</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px;">Start Project</a>
+                <a href="pricing.html" class="btn btn-primary">Packages</a>
                 <div class="hamburger"><i class="fas fa-bars"></i></div>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="section-padding container">
-        <div class="section-title reveal fade-up">
-            <span class="badge-premium" style="margin-bottom: 15px;">Value-Based Pricing</span>
-            <h1 class="text-gradient" style="font-size: 4rem;">Transparent Investment</h1>
-            <p style="margin-top: 15px;">We don't charge per page. We charge for the value, infrastructure, and lead-generation power we build for your business.</p>
+    <header class="header-bg reveal">
+        <h1 class="text-gradient">Transparent Investment</h1>
+        <p style="font-size: 1.2rem; color: var(--text-muted); margin-top:10px;">High-value assets at costs designed for growing businesses.</p>
+    </header>
+
+    <section class="pricing-grid">
+        <!-- Starter -->
+        <div class="price-card reveal delay-1">
+            <h3>Starter</h3>
+            <div class="price"><span>₹</span>699</div>
+            <ul class="features">
+                <li><i class="fas fa-check-circle"></i> 1 Page Landing Site</li>
+                <li><i class="fas fa-check-circle"></i> Mobile Auto-Adjust</li>
+                <li><i class="fas fa-check-circle"></i> WhatsApp Floating Button</li>
+                <li><i class="fas fa-check-circle"></i> Basic Speed Setup</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%;">Choose Starter</a>
         </div>
 
-        <div class="pricing-grid">
-            <!-- Starter Plan -->
-            <div class="price-card card-3d reveal fade-left delay-1">
-                <h3>Starter</h3>
-                <div class="price"><span>₹</span>699</div>
-                <span class="billing-cycle">One-Time Setup</span>
-                <ul class="features">
-                    <li><i class="fas fa-check"></i> High-Converting Landing Site</li>
-                    <li><i class="fas fa-check"></i> Mobile Auto-Adjust UI</li>
-                    <li><i class="fas fa-check"></i> WhatsApp Float Trigger</li>
-                    <li class="special"><i class="fas fa-star"></i> 1 Month Free Maintenance</li>
-                </ul>
-                <a href="contact.html" class="btn btn-outline" style="width: 100%;">Select Starter</a>
-            </div>
+        <!-- Growth -->
+        <div class="price-card popular reveal">
+            <div class="badge">Most Popular</div>
+            <h3>Growth</h3>
+            <div class="price"><span>₹</span>999</div>
+            <ul class="features">
+                <li><i class="fas fa-check-circle"></i> Multi-Page Structure</li>
+                <li><i class="fas fa-check-circle"></i> Lead Generation Form</li>
+                <li><i class="fas fa-check-circle"></i> Google Maps Setup</li>
+                <li><i class="fas fa-check-circle"></i> Advanced Animations</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="width: 100%; padding: 18px;">Choose Growth</a>
+        </div>
 
-            <!-- Growth Plan -->
-            <div class="price-card popular card-3d reveal zoom">
-                <div class="badge-popular">Most Popular</div>
-                <h3>Growth</h3>
-                <div class="price"><span>₹</span>999</div>
-                <span class="billing-cycle">One-Time Setup</span>
-                <ul class="features">
-                    <li><i class="fas fa-check"></i> Multi-Section Funnel Setup</li>
-                    <li><i class="fas fa-check"></i> Secure Lead Capture Form</li>
-                    <li><i class="fas fa-check"></i> Google Maps & SEO Basic</li>
-                    <li class="special"><i class="fas fa-star"></i> Lifetime Free Hosting</li>
-                    <li class="special"><i class="fas fa-star"></i> 3 Months Free Maintenance</li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary" style="width: 100%; padding: 20px; font-size: 1.1rem;">Select Growth <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <!-- Pro Plan -->
-            <div class="price-card card-3d reveal fade-right delay-2">
-                <h3>Pro Elite</h3>
-                <div class="price"><span>₹</span>1499</div>
-                <span class="billing-cycle">One-Time Setup</span>
-                <ul class="features">
-                    <li><i class="fas fa-check"></i> Premium 3D & Glass UI</li>
-                    <li><i class="fas fa-check"></i> Advanced Local SEO Tags</li>
-                    <li><i class="fas fa-check"></i> Unlimited Revisions</li>
-                    <li class="special"><i class="fas fa-star"></i> Lifetime Free Hosting</li>
-                    <li class="special"><i class="fas fa-star"></i> 6 Months Free Maintenance</li>
-                </ul>
-                <a href="contact.html" class="btn btn-outline" style="width: 100%;">Select Pro</a>
-            </div>
+        <!-- Pro -->
+        <div class="price-card reveal delay-2">
+            <h3>Pro</h3>
+            <div class="price"><span>₹</span>1,499</div>
+            <ul class="features">
+                <li><i class="fas fa-check-circle"></i> Premium Graphic UI</li>
+                <li><i class="fas fa-check-circle"></i> Local SEO Tags Setup</li>
+                <li><i class="fas fa-check-circle"></i> Glassmorphism FX</li>
+                <li><i class="fas fa-check-circle"></i> Priority Delivery</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%;">Choose Pro</a>
         </div>
     </section>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/917249828812" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
-
-    <!-- Premium Global Footer -->
-    <footer class="premium-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h2>QwickDesk<span>.</span></h2>
-                <p>Dominate your local market with elite digital infrastructure. We build assets that work 24/7 for you.</p>
-                <a href="https://www.instagram.com/qwickdesksolutions?igsh=MW15anRmbDFxbmhkZw==" target="_blank" class="social-btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: var(--shadow-glow); transition: 0.3s;">
-                    <i class="fab fa-instagram" style="font-size: 1.2rem;"></i> Follow on Instagram
-                </a>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="services.html">Expertise & Process</a>
-                <a href="pricing.html">Plans & Pricing</a>
-                <a href="portfolio.html">Our Work</a>
-            </div>
-            <div class="footer-links">
-                <h4>Dedicated A/C Support</h4>
-                <p>We are available 24/7 for our premium clients.</p>
-                <div class="support-box">
-                    <span>Direct Support Line</span>
-                    <a href="tel:+917249828812"><i class="fas fa-headset"></i> +91 7249828812</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 QwickDesk Solutions. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+    <a href="https://wa.me/917249828812" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 QwickDesk Solutions.</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
