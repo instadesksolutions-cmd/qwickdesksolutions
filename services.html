@@ -3,39 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Expertise | QwickDesk</title>
+    <title>Our Expertise | QwickDesk Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Expertise Specific Styles */
-        .header-bg { text-align: center; padding: 160px 5% 60px; background: linear-gradient(to bottom, var(--bg-main), #eff6ff); position: relative; overflow: hidden; }
-        .header-bg h1 { font-size: 4.5rem; margin-bottom: 20px; line-height: 1.1; }
+        .header-bg { background: linear-gradient(135deg, #f8fafc, #eff6ff); padding: 150px 5% 80px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 80px; }
+        .header-bg h1 { font-size: 4rem; margin-bottom: 20px; }
         
-        .expertise-card { display: flex; align-items: center; gap: 60px; background: var(--white); padding: 60px; border-radius: 40px; margin-bottom: 50px; box-shadow: var(--shadow-soft); border: 1px solid #e2e8f0; position: relative; overflow: hidden; transition: var(--transition); }
-        .expertise-card:hover { transform: translateX(10px); border-color: var(--primary-light); box-shadow: var(--shadow-heavy); }
+        .expertise-container { max-width: 1100px; margin: auto; padding: 0 5% 100px; }
+        .step-row { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 60px; background: white; padding: 50px; border-radius: 30px; box-shadow: var(--shadow-sm); transition: var(--transition); border: 1px solid transparent; }
+        .step-row:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: #e2e8f0; }
         
-        .step-num { position: absolute; right: 20px; top: -20px; font-size: 18rem; font-weight: 900; color: transparent; -webkit-text-stroke: 3px rgba(37,99,235,0.05); line-height: 1; user-select: none; z-index: 1; transition: var(--transition-bounce); }
-        .expertise-card:hover .step-num { transform: scale(1.05) rotate(-5deg); -webkit-text-stroke: 3px rgba(37,99,235,0.1); }
-        
-        .content { position: relative; z-index: 2; width: 100%; }
-        .content h3 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
-        .content p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.8; max-width: 800px; }
-        
-        .bullet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .bullet-grid li { display: flex; align-items: center; gap: 15px; font-weight: 700; font-size: 1.05rem; color: var(--text-main); }
-        .bullet-grid li i { color: var(--white); background: var(--primary-light); padding: 10px; border-radius: 12px; font-size: 0.9rem; box-shadow: var(--shadow-glow); }
+        .step-number { font-size: 4rem; font-weight: 800; color: var(--primary-light); opacity: 0.2; line-height: 0.8; }
+        .step-content h3 { font-size: 2rem; margin-bottom: 20px; color: var(--dark); }
+        .step-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; }
+        .detail-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .detail-list li { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text-main); }
+        .detail-list li i { color: var(--secondary); }
 
         @media (max-width: 768px) {
-            .header-bg h1 { font-size: 3.2rem; }
-            .expertise-card { padding: 40px 30px; flex-direction: column; text-align: left; }
-            .step-num { font-size: 10rem; right: 10px; top: 10px; }
-            .bullet-grid { grid-template-columns: 1fr; }
+            .header-bg h1 { font-size: 3rem; }
+            .step-row { flex-direction: column; gap: 20px; padding: 30px; }
+            .detail-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Premium Navbar -->
     <nav class="navbar">
         <div class="logo">QwickDesk<span>.</span></div>
         <div class="nav-menu">
@@ -43,116 +37,86 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Our Expertise</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="portfolio.html">Our Work</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="pricing.html" class="btn btn-primary" style="padding: 10px 24px;">Packages</a>
+                <a href="pricing.html" class="btn btn-primary">Packages</a>
                 <div class="hamburger"><i class="fas fa-bars"></i></div>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="header-bg">
-        <div class="container reveal fade-up">
-            <span class="badge-premium" style="margin-bottom: 20px;">The Methodology</span>
-            <h1 class="text-gradient">Deep Digital Crafting</h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">We don't just write code; we combine psychology, logic, and high-end aesthetics to build scalable assets that establish absolute authority in your industry.</p>
-        </div>
+    <header class="header-bg reveal">
+        <h1 class="text-gradient">What We Deliver</h1>
+        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: auto;">We combine art, psychology, and logic to build digital assets that establish your authority in the local market.</p>
     </header>
 
-    <!-- Expertise Funnel Cards -->
-    <section class="container" style="padding-bottom: 100px; margin-top: -30px; position: relative; z-index: 10;">
+    <section class="expertise-container">
         
         <!-- Step 01 -->
-        <div class="expertise-card reveal fade-left">
-            <div class="step-num">01</div>
-            <div class="content">
+        <div class="step-row reveal">
+            <div class="step-number">01</div>
+            <div class="step-content">
                 <h3>Visual Architecture & UI</h3>
-                <p>First impressions dictate conversions. We handcraft custom interfaces using brand psychology and advanced glassmorphism techniques. Every pixel, shadow, and font is strategically placed to guide the visitor's eye directly to your Call-To-Action.</p>
-                <ul class="bullet-grid">
-                    <li><i class="fas fa-pen-nib"></i> High-Resolution Custom Graphics</li>
-                    <li><i class="fas fa-palette"></i> Brand Psychology Color Grading</li>
-                    <li><i class="fas fa-layer-group"></i> 3D Glassmorphism Effects</li>
-                    <li><i class="fas fa-mouse-pointer"></i> Seamless Scroll Flow Dynamics</li>
+                <p>The first impression is everything. Instead of using generic builders, we handcraft custom interfaces. Every color, shadow, and font is strategically placed to trigger trust and professionalism in your customer's mind. The layout guides the visitor's eye directly to your contact forms.</p>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check"></i> High-Resolution Graphics</li>
+                    <li><i class="fas fa-check"></i> Brand Psychology Colors</li>
+                    <li><i class="fas fa-check"></i> Glassmorphism Effects</li>
+                    <li><i class="fas fa-check"></i> Seamless Scroll Flow</li>
                 </ul>
             </div>
         </div>
 
         <!-- Step 02 -->
-        <div class="expertise-card reveal fade-right delay-1">
-            <div class="step-num">02</div>
-            <div class="content">
-                <h3>Code Velocity & Local SEO</h3>
-                <p>A beautiful site is useless if it's slow. We write pure, structural code that ensures near-instant load times. This eliminates user bounce rates and actively boosts your organic ranking on Google search results.</p>
-                <ul class="bullet-grid">
-                    <li><i class="fas fa-tachometer-alt"></i> Sub 2-Second Load Speeds</li>
-                    <li><i class="fas fa-check-double"></i> Core Web Vitals Pass Guarantee</li>
-                    <li><i class="fas fa-server"></i> Advanced Edge Caching Tech</li>
-                    <li><i class="fas fa-search"></i> Deep Structural SEO Tags</li>
+        <div class="step-row reveal">
+            <div class="step-number">02</div>
+            <div class="step-content">
+                <h3>Code Optimization & Velocity</h3>
+                <p>A beautiful layout is useless if it takes 10 seconds to load. We write minified, structural code that ensures your platform loads in the blink of an eye. This not only keeps visitors engaged but significantly boosts your Google Search ranking.</p>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check"></i> Sub 2-Second Load Times</li>
+                    <li><i class="fas fa-check"></i> Core Web Vitals Passed</li>
+                    <li><i class="fas fa-check"></i> Image Compression</li>
+                    <li><i class="fas fa-check"></i> SEO Structured Data</li>
                 </ul>
             </div>
         </div>
 
         <!-- Step 03 -->
-        <div class="expertise-card reveal fade-left delay-2">
-            <div class="step-num">03</div>
-            <div class="content">
-                <h3>Lead Capture Systems</h3>
-                <p>Traffic without leads is a waste of money. We integrate intelligent capture systems directly into the architecture. From floating communication buttons to highly secure data forms that link directly to your inbox in real-time.</p>
-                <ul class="bullet-grid">
-                    <li><i class="fas fa-shield-alt"></i> Secure Encrypted Data Forms</li>
-                    <li><i class="fab fa-whatsapp"></i> Direct WhatsApp Triggers</li>
-                    <li><i class="fas fa-map-marked-alt"></i> Interactive Google Maps Embeds</li>
-                    <li><i class="fas fa-bullseye"></i> High-Conversion CTA Strategy</li>
+        <div class="step-row reveal">
+            <div class="step-number">03</div>
+            <div class="step-content">
+                <h3>Omni-Device Fluidity</h3>
+                <p>Your clients are searching for you on iPhones, Androids, Tablets, and Laptops. Our structures are mathematically calculated to shrink, expand, and reorganize elements automatically. No pinching, no zooming—just a perfect, app-like experience on every screen.</p>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check"></i> 100% Mobile Responsive</li>
+                    <li><i class="fas fa-check"></i> Thumb-friendly Navigation</li>
+                    <li><i class="fas fa-check"></i> Dynamic Font Scaling</li>
+                    <li><i class="fas fa-check"></i> No Horizontal Overflow</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Call to Action Banner -->
-        <div class="reveal zoom delay-3" style="text-align: center; margin-top: 80px; background: var(--primary); padding: 60px 40px; border-radius: 40px; box-shadow: var(--shadow-heavy);">
-            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Ready to Upgrade Your Business?</h2>
-            <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Stop losing clients to competitors with better digital presence. Secure your slot today.</p>
-            <a href="pricing.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 18px 40px;">View Investment Plans</a>
+        <!-- Step 04 -->
+        <div class="step-row reveal">
+            <div class="step-number">04</div>
+            <div class="step-content">
+                <h3>Lead Capture Systems</h3>
+                <p>Traffic without leads is a waste. We integrate intelligent capture systems. From floating communication buttons to highly secure data forms, we ensure that when a customer wants to talk, they can reach your email or WhatsApp in one single tap.</p>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check"></i> Zero-Spam Data Forms</li>
+                    <li><i class="fas fa-check"></i> Direct WhatsApp Triggers</li>
+                    <li><i class="fas fa-check"></i> Google Maps Embedding</li>
+                    <li><i class="fas fa-check"></i> Call-To-Action Strategy</li>
+                </ul>
+            </div>
         </div>
 
     </section>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/917249828812" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
-    
-    <!-- Premium Global Footer -->
-    <footer class="premium-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h2>QwickDesk<span>.</span></h2>
-                <p>Dominate your local market with elite digital infrastructure. We build assets that work 24/7 for you.</p>
-                <a href="https://www.instagram.com/qwickdesksolutions?igsh=MW15anRmbDFxbmhkZw==" target="_blank" class="social-btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: var(--shadow-glow); transition: 0.3s;">
-                    <i class="fab fa-instagram" style="font-size: 1.2rem;"></i> Follow on Instagram
-                </a>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="services.html">Expertise & Process</a>
-                <a href="pricing.html">Plans & Pricing</a>
-                <a href="portfolio.html">Our Work</a>
-            </div>
-            <div class="footer-links">
-                <h4>Dedicated A/C Support</h4>
-                <p>We are available 24/7 for our premium clients.</p>
-                <div class="support-box">
-                    <span>Direct Support Line</span>
-                    <a href="tel:+917249828812"><i class="fas fa-headset"></i> +91 7249828812</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 QwickDesk Solutions. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+    <a href="https://wa.me/917249828812" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 QwickDesk Solutions.</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
