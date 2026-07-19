@@ -1,81 +1,310 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* ==========================================================================
+   QWICKDESK - PREMIUM DIGITAL AGENCY STYLESHEET
+   Version: 2.0 (Extended Deep UI & Advanced Animations)
+   ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+/* --- 1. CORE VARIABLES & THEME --- */
 :root {
     --primary: #020617;       /* Deep Luxury Slate */
     --primary-light: #2563eb; /* Electric Blue */
+    --primary-dark: #1e3a8a;  /* Deep Navy */
     --secondary: #10b981;     /* Trust Emerald Green */
     --accent: #f43f5e;        /* Conversion Pink */
-    --text-main: #334155;
-    --text-muted: #64748b;
+    --text-main: #334155;     /* Easy Reading Dark */
+    --text-muted: #64748b;    /* Professional Gray */
     --bg-main: #f8fafc;       /* Off-white premium bg */
     --white: #ffffff;
+    
+    /* Advanced Glass & Shadows */
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-blur: blur(16px);
     --shadow-soft: 0 10px 30px rgba(0,0,0,0.03);
+    --shadow-medium: 0 15px 40px rgba(0,0,0,0.06);
     --shadow-heavy: 0 25px 50px rgba(0,0,0,0.08);
     --shadow-glow: 0 15px 35px rgba(37, 99, 235, 0.25);
+    
+    /* Fluid Transitions */
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Base Reset & Smoothness */
+/* --- 2. BASE RESET & SMOOTHNESS --- */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
-body { background: var(--bg-main); color: var(--text-main); line-height: 1.7; overflow-x: hidden; padding-top: 90px; }
-a { text-decoration: none; color: inherit; }
+body { 
+    background: var(--bg-main); 
+    color: var(--text-main); 
+    line-height: 1.7; 
+    overflow-x: hidden; 
+    padding-top: 85px; 
+    -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
-img { max-width: 100%; height: auto; }
+img { max-width: 100%; height: auto; display: block; }
 
-/* Premium Typography */
-h1, h2, h3, h4 { color: var(--primary); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; }
-.text-gradient { background: linear-gradient(135deg, var(--primary-light), #8b5cf6, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+/* --- 3. PREMIUM TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 { 
+    color: var(--primary); 
+    font-weight: 800; 
+    letter-spacing: -0.5px; 
+    line-height: 1.2; 
+}
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 1.8rem; }
+p { font-size: 1.05rem; }
 
-/* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; border-radius: 50px; font-weight: 700; font-size: 1.05rem; cursor: pointer; transition: var(--transition); border: none; z-index: 1; position: relative; overflow: hidden; }
-.btn-primary { background: linear-gradient(135deg, var(--primary-light), #1e40af); color: var(--white); box-shadow: var(--shadow-glow); }
-.btn-primary:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4); color: var(--white); }
-.btn-outline { background: var(--glass-bg); backdrop-filter: blur(10px); color: var(--primary); border: 2px solid #e2e8f0; }
-.btn-outline:hover { background: var(--primary-light); color: var(--white); border-color: var(--primary-light); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+/* Animated Gradient Text */
+.text-gradient { 
+    background: linear-gradient(135deg, var(--primary-light), #8b5cf6, var(--accent)); 
+    background-size: 200% auto;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: shine 5s linear infinite;
+}
+@keyframes shine { to { background-position: 200% center; } }
 
-/* Glass Navbar */
-.navbar { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; z-index: 1000; transition: var(--transition); background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.03); }
-.navbar.scrolled { padding: 15px 5%; box-shadow: var(--shadow-soft); background: rgba(255, 255, 255, 0.95); }
-.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; color: var(--primary); }
+/* --- 4. ADVANCED BUTTONS & CTA --- */
+.btn { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    padding: 15px 30px; 
+    border-radius: 50px; 
+    font-weight: 700; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: var(--transition-bounce); 
+    border: none; 
+    z-index: 1; 
+    position: relative; 
+    overflow: hidden; 
+}
+.btn-primary { 
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark)); 
+    color: var(--white); 
+    box-shadow: var(--shadow-glow); 
+}
+.btn-primary:hover { 
+    transform: translateY(-5px) scale(1.02); 
+    box-shadow: 0 25px 45px rgba(37, 99, 235, 0.4); 
+    color: var(--white); 
+}
+.btn-outline { 
+    background: var(--glass-bg); 
+    backdrop-filter: var(--glass-blur); 
+    color: var(--primary); 
+    border: 2px solid #e2e8f0; 
+}
+.btn-outline:hover { 
+    background: var(--primary-light); 
+    color: var(--white); 
+    border-color: var(--primary-light); 
+    transform: translateY(-5px); 
+    box-shadow: var(--shadow-glow); 
+}
+
+/* --- 5. GLASSMORPHISM NAVBAR --- */
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 18px 5%; 
+    z-index: 1000; 
+    transition: var(--transition); 
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: var(--glass-blur); 
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid rgba(255,255,255,0.5); 
+}
+.navbar.scrolled { 
+    padding: 12px 5%; 
+    box-shadow: var(--shadow-soft); 
+    background: rgba(255, 255, 255, 0.95); 
+}
+.logo { font-size: 1.7rem; font-weight: 900; letter-spacing: -1px; color: var(--primary); }
 .logo span { color: var(--primary-light); }
 
-.nav-links { display: flex; gap: 40px; align-items: center; }
-.nav-links a { font-weight: 600; color: var(--text-muted); font-size: 1.05rem; transition: var(--transition); }
+.nav-links { display: flex; gap: 35px; align-items: center; }
+.nav-links a { font-weight: 600; color: var(--text-muted); font-size: 1rem; position: relative; }
+.nav-links a::after {
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+    background-color: var(--primary-light); transition: var(--transition);
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary-light); }
+
 .nav-actions { display: flex; align-items: center; gap: 20px; }
-.hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary); }
+.hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary); transition: var(--transition); }
+.hamburger:hover { color: var(--primary-light); }
 
-/* Layouts */
+/* --- 6. LAYOUTS & CONTAINERS --- */
 .container { max-width: 1250px; margin: 0 auto; padding: 0 5%; }
-.section-padding { padding: 120px 0; }
-.section-title { text-align: center; margin-bottom: 70px; }
-.section-title h2 { font-size: 3.5rem; margin-bottom: 20px; }
-.section-title p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+.section-padding { padding: 100px 0; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 3rem; margin-bottom: 15px; }
+.section-title p { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
 
-/* Animations */
+/* Advanced UI Utilities */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+}
+.badge-premium {
+    background: rgba(37,99,235,0.1); 
+    color: var(--primary-light); 
+    padding: 8px 16px; 
+    border-radius: 30px; 
+    font-weight: 700; 
+    font-size: 0.85rem; 
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- 7. EXTENDED ANIMATIONS & 3D EFFECTS --- */
+/* Scroll Reveals */
 .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
-.delay-1 { transition-delay: 0.15s; } .delay-2 { transition-delay: 0.3s; }
+.reveal.fade-left { transform: translateX(-50px); }
+.reveal.fade-left.active { transform: translateX(0); }
+.reveal.fade-right { transform: translateX(50px); }
+.reveal.fade-right.active { transform: translateX(0); }
+.reveal.zoom { transform: scale(0.9); }
+.reveal.zoom.active { transform: scale(1); }
 
-/* WhatsApp Floating */
-.floating-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); z-index: 1000; transition: var(--transition); }
-.floating-wa:hover { transform: scale(1.1) translateY(-5px); }
+/* Delays */
+.delay-1 { transition-delay: 0.1s; } 
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
 
-/* Footer */
-footer { background: var(--primary); color: white; text-align: center; padding: 60px 20px 30px; border-radius: 50px 50px 0 0; margin-top: 80px; }
-footer h2 { color: white; font-size: 2.5rem; margin-bottom: 10px; }
-footer p { color: var(--text-muted); }
-
-/* Mobile Glitch-Free Fixes */
-@media (max-width: 991px) {
-    .nav-links { position: fixed; top: 0; left: -100%; width: 100%; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); flex-direction: column; justify-content: center; transition: 0.4s ease-in-out; z-index: 999; }
-    .nav-links.active { left: 0; }
-    .nav-links a { font-size: 1.5rem; margin-bottom: 30px; }
-    .hamburger { display: block; z-index: 1001; }
-    .nav-actions { z-index: 1001; }
-    .nav-actions .btn { padding: 10px 20px; font-size: 0.95rem; }
-    .section-title h2 { font-size: 2.5rem; }
+/* 3D Hover Cards */
+.card-3d { 
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, border-color 0.4s; 
+    border: 1px solid transparent;
 }
+.card-3d:hover { 
+    transform: translateY(-12px); 
+    box-shadow: var(--shadow-heavy), 0 20px 40px rgba(37, 99, 235, 0.15); 
+    border-color: rgba(37, 99, 235, 0.3);
+    z-index: 10;
+}
+
+/* Continuous Floating */
+.float-anim { animation: floatBox 6s ease-in-out infinite; }
+@keyframes floatBox {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* --- 8. GLOBAL FOOTER (Advanced & Clean) --- */
+.premium-footer { 
+    background: var(--primary); 
+    color: white; 
+    padding: 70px 5% 30px; 
+    border-radius: 50px 50px 0 0; 
+    margin-top: 80px; 
+    position: relative;
+    overflow: hidden;
+}
+.footer-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 50px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    position: relative;
+    z-index: 2;
+}
+.footer-brand h2 { color: white; font-size: 2.2rem; margin-bottom: 15px; }
+.footer-brand p { color: #94a3b8; font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
+.footer-links h4 { color: white; font-size: 1.2rem; margin-bottom: 20px; }
+.footer-links a, .footer-links p { color: #cbd5e1; font-size: 1rem; margin-bottom: 12px; display: block; }
+.footer-links a:hover { color: var(--secondary); transform: translateX(8px); }
+.support-box { 
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+}
+.support-box span { display: block; color: var(--secondary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 5px; }
+.support-box a { color: white; font-size: 1.3rem; font-weight: 800; }
+.footer-bottom { 
+    text-align: center; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    margin-top: 50px; 
+    padding-top: 25px; 
+    color: #64748b; 
+    font-size: 0.95rem;
+}
+
+/* --- 9. WHATSAPP FLOATING BUTTON --- */
+.floating-wa { 
+    position: fixed; bottom: 30px; right: 30px; 
+    background: #25D366; color: white; 
+    width: 60px; height: 60px; border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    font-size: 32px; 
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); 
+    z-index: 1000; transition: var(--transition-bounce); 
+}
+.floating-wa:hover { transform: scale(1.15) translateY(-5px) rotate(5deg); background: #20b858; color: white;}
+
+/* --- 10. STRICT MOBILE OPTIMIZATION (Font scaling & Glitch Fixes) --- */
+@media (max-width: 991px) {
+    /* Navbar Mobile Fix */
+    .nav-links { 
+        position: fixed; top: 0; left: -100%; 
+        width: 100%; height: 100vh; 
+        background: rgba(255,255,255,0.98); 
+        backdrop-filter: var(--glass-blur); 
+        flex-direction: column; justify-content: center; 
+        transition: 0.4s ease-in-out; z-index: 999; 
+    }
+    .nav-links.active { left: 0; }
+    .nav-links a { font-size: 1.4rem; margin-bottom: 20px; }
+    .hamburger { display: block; z-index: 1001; }
+    .nav-actions { display: none; } /* Hide extra button on mobile nav for clean look */
+    
+    /* Strict Font Scaling for Mobile */
+    h1 { font-size: 2.2rem !important; line-height: 1.25 !important; }
+    h2 { font-size: 1.8rem !important; }
+    h3 { font-size: 1.4rem !important; }
+    p { font-size: 0.95rem !important; line-height: 1.6 !important; }
+    
+    .section-title h2 { font-size: 2rem !important; margin-bottom: 10px !important; }
+    .section-title p { font-size: 0.95rem !important; }
+    
+    .section-padding { padding: 60px 0 !important; }
+    .container { padding: 0 6% !important; }
+    
+    /* Global Layout Fixes */
+    .hero-grid, .about-grid, .contact-wrap { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; }
+    
+    /* Pricing & Services Mobile Adjustments */
+    .price { font-size: 3rem !important; }
+    .expertise-card { flex-direction: column !important; text-align: center; padding: 40px 20px !important; }
+    .step-num { position: relative !important; font-size: 4rem !important; margin-bottom: -10px !important; right: auto !important; }
+    .bullet-grid { grid-template-columns: 1fr !important; text-align: left; }
+    
+    /* Footer Mobile */
+    .premium-footer { padding: 50px 20px 20px !important; border-radius: 30px 30px 0 0 !important; }
+    .footer-grid { gap: 30px !important; text-align: center; }
+    .support-box { text-align: center; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem !important; }
+    .btn { padding: 12px 24px !important; font-size: 0.9rem !important; width: 100%; }
+    }
