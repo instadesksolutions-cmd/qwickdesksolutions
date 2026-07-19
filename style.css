@@ -1,310 +1,269 @@
 /* ==========================================================================
-   QWICKDESK - PREMIUM DIGITAL AGENCY STYLESHEET
-   Version: 2.0 (Extended Deep UI & Advanced Animations)
+   QWICKDESK - GLOBAL STYLESHEET (Premium Agency Theme)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
 
-/* --- 1. CORE VARIABLES & THEME --- */
 :root {
-    --primary: #020617;       /* Deep Luxury Slate */
-    --primary-light: #2563eb; /* Electric Blue */
-    --primary-dark: #1e3a8a;  /* Deep Navy */
-    --secondary: #10b981;     /* Trust Emerald Green */
-    --accent: #f43f5e;        /* Conversion Pink */
-    --text-main: #334155;     /* Easy Reading Dark */
-    --text-muted: #64748b;    /* Professional Gray */
-    --bg-main: #f8fafc;       /* Off-white premium bg */
+    --primary: #1e3a8a;          /* Deep Blue */
+    --primary-light: #2563eb;    /* Royal Blue */
+    --primary-dark: #0f172a;     /* Slate Dark */
+    --secondary: #10b981;        /* Emerald Green (Success/Trust) */
+    --accent: #f43f5e;           /* Rose (Highlight) */
+    --bg-main: #f8fafc;          /* Light Slate BG */
     --white: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
     
-    /* Advanced Glass & Shadows */
+    /* Premium Effects */
     --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.4);
     --glass-blur: blur(16px);
-    --shadow-soft: 0 10px 30px rgba(0,0,0,0.03);
-    --shadow-medium: 0 15px 40px rgba(0,0,0,0.06);
-    --shadow-heavy: 0 25px 50px rgba(0,0,0,0.08);
-    --shadow-glow: 0 15px 35px rgba(37, 99, 235, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+    --shadow-heavy: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+    --shadow-glow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
     
-    /* Fluid Transitions */
-    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.26, 1.55);
 }
 
-/* --- 2. BASE RESET & SMOOTHNESS --- */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body { 
-    background: var(--bg-main); 
-    color: var(--text-main); 
-    line-height: 1.7; 
-    overflow-x: hidden; 
-    padding-top: 85px; 
-    -webkit-font-smoothing: antialiased;
-}
-a { text-decoration: none; color: inherit; transition: var(--transition); }
-ul { list-style: none; }
-img { max-width: 100%; height: auto; display: block; }
-
-/* --- 3. PREMIUM TYPOGRAPHY --- */
-h1, h2, h3, h4, h5, h6 { 
-    color: var(--primary); 
-    font-weight: 800; 
-    letter-spacing: -0.5px; 
-    line-height: 1.2; 
-}
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.8rem; }
-h3 { font-size: 1.8rem; }
-p { font-size: 1.05rem; }
-
-/* Animated Gradient Text */
-.text-gradient { 
-    background: linear-gradient(135deg, var(--primary-light), #8b5cf6, var(--accent)); 
-    background-size: 200% auto;
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    animation: shine 5s linear infinite;
-}
-@keyframes shine { to { background-position: 200% center; } }
-
-/* --- 4. ADVANCED BUTTONS & CTA --- */
-.btn { 
-    display: inline-flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 10px; 
-    padding: 15px 30px; 
-    border-radius: 50px; 
-    font-weight: 700; 
-    font-size: 1rem; 
-    cursor: pointer; 
-    transition: var(--transition-bounce); 
-    border: none; 
-    z-index: 1; 
-    position: relative; 
-    overflow: hidden; 
-}
-.btn-primary { 
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark)); 
-    color: var(--white); 
-    box-shadow: var(--shadow-glow); 
-}
-.btn-primary:hover { 
-    transform: translateY(-5px) scale(1.02); 
-    box-shadow: 0 25px 45px rgba(37, 99, 235, 0.4); 
-    color: var(--white); 
-}
-.btn-outline { 
-    background: var(--glass-bg); 
-    backdrop-filter: var(--glass-blur); 
-    color: var(--primary); 
-    border: 2px solid #e2e8f0; 
-}
-.btn-outline:hover { 
-    background: var(--primary-light); 
-    color: var(--white); 
-    border-color: var(--primary-light); 
-    transform: translateY(-5px); 
-    box-shadow: var(--shadow-glow); 
+/* Base Styles & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important; /* CRITICAL FIX for overflows */
+    font-family: 'Inter', sans-serif;
 }
 
-/* --- 5. GLASSMORPHISM NAVBAR --- */
-.navbar { 
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 18px 5%; 
-    z-index: 1000; 
-    transition: var(--transition); 
-    background: rgba(255, 255, 255, 0.7); 
-    backdrop-filter: var(--glass-blur); 
-    -webkit-backdrop-filter: var(--glass-blur);
-    border-bottom: 1px solid rgba(255,255,255,0.5); 
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden !important; /* GLITCH FIX: Prevents horizontal scrolling */
+    width: 100%;
 }
-.navbar.scrolled { 
-    padding: 12px 5%; 
-    box-shadow: var(--shadow-soft); 
-    background: rgba(255, 255, 255, 0.95); 
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
 }
-.logo { font-size: 1.7rem; font-weight: 900; letter-spacing: -1px; color: var(--primary); }
-.logo span { color: var(--primary-light); }
 
-.nav-links { display: flex; gap: 35px; align-items: center; }
-.nav-links a { font-weight: 600; color: var(--text-muted); font-size: 1rem; position: relative; }
-.nav-links a::after {
-    content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
-    background-color: var(--primary-light); transition: var(--transition);
-}
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-links a:hover, .nav-links a.active { color: var(--primary-light); }
-
-.nav-actions { display: flex; align-items: center; gap: 20px; }
-.hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary); transition: var(--transition); }
-.hamburger:hover { color: var(--primary-light); }
-
-/* --- 6. LAYOUTS & CONTAINERS --- */
-.container { max-width: 1250px; margin: 0 auto; padding: 0 5%; }
 .section-padding { padding: 100px 0; }
-.section-title { text-align: center; margin-bottom: 60px; }
-.section-title h2 { font-size: 3rem; margin-bottom: 15px; }
-.section-title p { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
 
-/* Advanced UI Utilities */
-.glass-panel {
+/* Text Utilities */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.badge-premium {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary-light);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition-bounce);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-light);
+    color: var(--white);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.6);
+    background: var(--primary);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary-light);
+}
+
+.btn-outline:hover {
+    background: var(--primary-light);
+    color: var(--white);
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    z-index: 1000;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.navbar.scrolled {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 5%;
     box-shadow: var(--shadow-soft);
 }
-.badge-premium {
-    background: rgba(37,99,235,0.1); 
-    color: var(--primary-light); 
-    padding: 8px 16px; 
-    border-radius: 30px; 
-    font-weight: 700; 
-    font-size: 0.85rem; 
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
-/* --- 7. EXTENDED ANIMATIONS & 3D EFFECTS --- */
-/* Scroll Reveals */
-.reveal { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.logo { font-size: 1.8rem; font-weight: 900; color: var(--primary-dark); }
+.logo span { color: var(--primary-light); }
+
+.nav-menu { display: flex; align-items: center; gap: 40px; }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 1rem; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary-light); }
+
+.hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary-dark); }
+
+/* Animations (Intersection Observer Targets) */
+.reveal { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
-.reveal.fade-left { transform: translateX(-50px); }
-.reveal.fade-left.active { transform: translateX(0); }
-.reveal.fade-right { transform: translateX(50px); }
-.reveal.fade-right.active { transform: translateX(0); }
-.reveal.zoom { transform: scale(0.9); }
+
+.fade-left { transform: translateX(-50px); }
+.fade-right { transform: translateX(50px); }
+.zoom { transform: scale(0.9); }
+.reveal.fade-left.active, .reveal.fade-right.active { transform: translateX(0); }
 .reveal.zoom.active { transform: scale(1); }
 
-/* Delays */
-.delay-1 { transition-delay: 0.1s; } 
+.delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 
-/* 3D Hover Cards */
-.card-3d { 
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, border-color 0.4s; 
-    border: 1px solid transparent;
-}
-.card-3d:hover { 
-    transform: translateY(-12px); 
-    box-shadow: var(--shadow-heavy), 0 20px 40px rgba(37, 99, 235, 0.15); 
-    border-color: rgba(37, 99, 235, 0.3);
-    z-index: 10;
-}
+/* 3D Card Hover Effect */
+.card-3d { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s; }
+.card-3d:hover { transform: translateY(-12px) scale(1.02); box-shadow: var(--shadow-heavy); }
 
-/* Continuous Floating */
-.float-anim { animation: floatBox 6s ease-in-out infinite; }
-@keyframes floatBox {
+/* Floating WhatsApp Button */
+.floating-wa {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    background: #25D366; color: white;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: var(--transition-bounce);
+    animation: float 3s ease-in-out infinite;
+}
+.floating-wa:hover { transform: scale(1.15); background: #1ebe57; }
+
+@keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-10px); }
 }
 
-/* --- 8. GLOBAL FOOTER (Advanced & Clean) --- */
-.premium-footer { 
-    background: var(--primary); 
-    color: white; 
-    padding: 70px 5% 30px; 
-    border-radius: 50px 50px 0 0; 
-    margin-top: 80px; 
-    position: relative;
-    overflow: hidden;
-}
-.footer-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 50px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    position: relative;
-    z-index: 2;
-}
-.footer-brand h2 { color: white; font-size: 2.2rem; margin-bottom: 15px; }
-.footer-brand p { color: #94a3b8; font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
-.footer-links h4 { color: white; font-size: 1.2rem; margin-bottom: 20px; }
-.footer-links a, .footer-links p { color: #cbd5e1; font-size: 1rem; margin-bottom: 12px; display: block; }
-.footer-links a:hover { color: var(--secondary); transform: translateX(8px); }
-.support-box { 
-    background: rgba(255,255,255,0.05); 
-    padding: 20px; 
-    border-radius: 15px; 
-    border: 1px solid rgba(255,255,255,0.1); 
-}
-.support-box span { display: block; color: var(--secondary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 5px; }
-.support-box a { color: white; font-size: 1.3rem; font-weight: 800; }
-.footer-bottom { 
-    text-align: center; 
-    border-top: 1px solid rgba(255,255,255,0.1); 
-    margin-top: 50px; 
-    padding-top: 25px; 
-    color: #64748b; 
-    font-size: 0.95rem;
+/* Premium Footer */
+.premium-footer { background: var(--primary-dark); color: white; padding: 80px 5% 20px; margin-top: 50px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto; margin-bottom: 50px; }
+.footer-brand h2 { font-size: 2.2rem; margin-bottom: 20px; }
+.footer-brand span { color: var(--primary-light); }
+.footer-brand p { color: #94a3b8; margin-bottom: 20px; }
+.footer-links h4 { font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; display: inline-block; }
+.footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 15px; transition: 0.3s; }
+.footer-links a:hover { color: var(--primary-light); transform: translateX(5px); }
+.support-box { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px; margin-top: 15px; border: 1px solid rgba(255,255,255,0.1); }
+.support-box span { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 5px; }
+.support-box a { color: var(--secondary); font-size: 1.2rem; font-weight: 700; margin: 0; pointer-events: none; }
+.footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; color: #64748b; font-size: 0.9rem; }
+
+/* ==========================================================================
+   MASTER FIXES (Mobile Glitches, Overflows & QR Scanner Size)
+   ========================================================================== */
+
+/* Fix: QR Scanner Size & Styling (Ensures it looks like a premium card and fits) */
+img[alt="Scan to Pay"], .qr-scanner-img {
+    width: 180px !important;
+    height: 180px !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 12px;
+    padding: 10px;
+    background: white;
+    box-shadow: var(--shadow-soft, 0 4px 15px rgba(0,0,0,0.05));
+    border: 1px solid #e2e8f0;
 }
 
-/* --- 9. WHATSAPP FLOATING BUTTON --- */
-.floating-wa { 
-    position: fixed; bottom: 30px; right: 30px; 
-    background: #25D366; color: white; 
-    width: 60px; height: 60px; border-radius: 50%; 
-    display: flex; align-items: center; justify-content: center; 
-    font-size: 32px; 
-    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); 
-    z-index: 1000; transition: var(--transition-bounce); 
+@media (max-width: 1024px) {
+    .nav-links { display: none; } /* Handled by JS active class usually */
+    .hamburger { display: block; }
 }
-.floating-wa:hover { transform: scale(1.15) translateY(-5px) rotate(5deg); background: #20b858; color: white;}
 
-/* --- 10. STRICT MOBILE OPTIMIZATION (Font scaling & Glitch Fixes) --- */
-@media (max-width: 991px) {
-    /* Navbar Mobile Fix */
-    .nav-links { 
-        position: fixed; top: 0; left: -100%; 
-        width: 100%; height: 100vh; 
-        background: rgba(255,255,255,0.98); 
-        backdrop-filter: var(--glass-blur); 
-        flex-direction: column; justify-content: center; 
-        transition: 0.4s ease-in-out; z-index: 999; 
+@media (max-width: 768px) {
+    /* Fix: Navbar Overlap - Hide the button on mobile, show only hamburger */
+    .nav-actions .btn {
+        display: none !important;
     }
-    .nav-links.active { left: 0; }
-    .nav-links a { font-size: 1.4rem; margin-bottom: 20px; }
-    .hamburger { display: block; z-index: 1001; }
-    .nav-actions { display: none; } /* Hide extra button on mobile nav for clean look */
     
-    /* Strict Font Scaling for Mobile */
-    h1 { font-size: 2.2rem !important; line-height: 1.25 !important; }
-    h2 { font-size: 1.8rem !important; }
-    h3 { font-size: 1.4rem !important; }
-    p { font-size: 0.95rem !important; line-height: 1.6 !important; }
-    
-    .section-title h2 { font-size: 2rem !important; margin-bottom: 10px !important; }
-    .section-title p { font-size: 0.95rem !important; }
-    
-    .section-padding { padding: 60px 0 !important; }
-    .container { padding: 0 6% !important; }
-    
-    /* Global Layout Fixes */
-    .hero-grid, .about-grid, .contact-wrap { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; }
-    
-    /* Pricing & Services Mobile Adjustments */
-    .price { font-size: 3rem !important; }
-    .expertise-card { flex-direction: column !important; text-align: center; padding: 40px 20px !important; }
-    .step-num { position: relative !important; font-size: 4rem !important; margin-bottom: -10px !important; right: auto !important; }
-    .bullet-grid { grid-template-columns: 1fr !important; text-align: left; }
-    
-    /* Footer Mobile */
-    .premium-footer { padding: 50px 20px 20px !important; border-radius: 30px 30px 0 0 !important; }
-    .footer-grid { gap: 30px !important; text-align: center; }
-    .support-box { text-align: center; }
-}
-
-@media (max-width: 480px) {
-    h1 { font-size: 2rem !important; }
-    .btn { padding: 12px 24px !important; font-size: 0.9rem !important; width: 100%; }
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
     }
+
+    /* Fix: Giant Text Overflow - Scale down headings */
+    h1, .text-gradient, h1.text-gradient {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word;
+    }
+    
+    /* Mobile Menu Active State */
+    .nav-links.active {
+        display: flex; flex-direction: column; position: absolute;
+        top: 70px; left: 0; right: 0; background: var(--white);
+        padding: 40px 5%; box-shadow: var(--shadow-soft);
+        text-align: center;
+    }
+
+    /* Fix: Container Overflows (Forces everything to fit the screen) */
+    .container, section, .form-container-box, .contact-wrapper, 
+    .direct-access-box, .pricing-grid, .expertise-card {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Target specific custom boxes with borders or dark backgrounds */
+    div[style*="border"], .trust-banner, .price-card, .upi-checkout-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 25px 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Form fields fix */
+    input, textarea, select {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
