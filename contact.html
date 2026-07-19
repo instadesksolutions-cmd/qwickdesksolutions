@@ -3,59 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Project | QwickDesk</title>
+    <title>Contact & Checkout | QwickDesk</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .contact-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; margin-top: 50px; margin-bottom: 80px; }
+        /* Contact Page Layout Refinements */
+        .contact-header { padding-top: 150px; padding-bottom: 40px; text-align: center; }
+        .contact-header h1 { font-size: 3.5rem; margin-bottom: 15px; }
         
-        .info-card { background: var(--primary); padding: 60px; border-radius: 40px; color: white; box-shadow: var(--shadow-heavy); }
-        .info-card h2 { color: white; margin-bottom: 20px; font-size: 2.8rem; }
-        .info-card p { color: #cbd5e1; margin-bottom: 50px; font-size: 1.15rem; }
+        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: flex-start; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; }
         
-        .contact-method { display: flex; align-items: center; gap: 20px; margin-bottom: 35px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); }
-        .contact-method:hover { background: rgba(255,255,255,0.1); transform: translateX(10px); }
-        .contact-method i { font-size: 24px; color: white; background: var(--primary-light); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: var(--shadow-glow); }
-        .contact-method h4 { color: white; font-size: 1.1rem; margin-bottom: 5px; }
-        .contact-method a { color: #cbd5e1; font-weight: 600; font-size: 1rem; }
+        /* Direct Access Box - Optimized for Mobile */
+        .direct-access-box { flex: 1; min-width: 300px; background: var(--primary-dark); color: white; padding: 40px; border-radius: 40px; box-shadow: var(--shadow-heavy); }
+        .direct-access-box h2 { font-size: 2rem; margin-bottom: 15px; color: white; }
+        .direct-access-box p { color: #cbd5e1; font-size: 1rem; margin-bottom: 30px; }
         
-        /* Form & Payment Container */
-        .form-card { background: var(--white); padding: 60px; border-radius: 40px; box-shadow: var(--shadow-soft); border: 1px solid #e2e8f0; }
+        .contact-method { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); }
+        .contact-method:hover { background: rgba(255,255,255,0.1); transform: translateX(5px); }
+        .contact-method i { font-size: 1.4rem; color: white; background: var(--primary-light); padding: 12px; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
+        .contact-method h4 { margin: 0; font-size: 1.1rem; margin-bottom: 2px; color: white; }
+        .contact-method a { color: #94a3b8; text-decoration: none; font-size: 1rem; font-weight: 600; }
         
-        .payment-box { background: #f8fafc; border: 2px dashed var(--primary-light); padding: 40px; border-radius: 24px; margin-bottom: 40px; text-align: center; }
-        .payment-box h4 { color: var(--primary); font-size: 1.4rem; margin-bottom: 25px; font-weight: 800; }
-        .qr-code-img { max-width: 180px; margin: 0 auto 25px; border-radius: 16px; border: 4px solid white; box-shadow: var(--shadow-soft); transition: var(--transition-bounce); }
-        .qr-code-img:hover { transform: scale(1.05); }
+        /* Form Box */
+        .form-container-box { flex: 1.2; min-width: 320px; background: var(--white); padding: 40px; border-radius: 40px; box-shadow: var(--shadow-soft); border: 1px solid #e2e8f0; }
         
-        .upi-container { display: flex; align-items: center; justify-content: space-between; background: white; padding: 15px 25px; border-radius: 12px; border: 2px solid #e2e8f0; max-width: 400px; margin: 0 auto 20px; box-shadow: var(--shadow-soft); }
-        .upi-id { font-size: 1.2rem; font-weight: 800; color: var(--primary); }
-        .copy-btn { background: var(--primary-light); color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        /* UPI Section */
+        .upi-checkout-box { border: 2px dashed var(--primary-light); background: rgba(37,99,235,0.03); border-radius: 25px; padding: 25px; text-align: center; margin-bottom: 30px; }
+        .upi-checkout-box h3 { color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 10px; }
         
-        .input-group { margin-bottom: 25px; }
-        .input-group label { display: block; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
-        .input-group input, .input-group select, .input-group textarea { width: 100%; padding: 18px; border: 2px solid #e2e8f0; border-radius: 16px; background: #f8fafc; font-size: 1.05rem; font-weight: 500; outline: none; transition: 0.3s; color: var(--text-main); font-family: inherit; }
-        .input-group input:focus, .input-group select:focus, .input-group textarea:focus { border-color: var(--primary-light); background: white; box-shadow: 0 0 0 4px rgba(37,99,235,0.1); }
+        .upi-copy-container { background: white; padding: 15px; border-radius: 15px; border: 1px solid #e2e8f0; display: inline-block; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+        .upi-copy-container h4 { font-size: 1.1rem; color: var(--text-main); margin-bottom: 10px; letter-spacing: 0.5px; }
         
-        /* The New Explicit Success Message */
-        #success-message { display: none; text-align: center; padding: 60px 40px; background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 30px; box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1); animation: fade-in 0.5s ease-out; }
-        #success-message i { font-size: 70px; color: var(--secondary); margin-bottom: 15px; }
-        #success-message h3 { font-size: 2.2rem; color: #064e3b; margin-bottom: 10px; font-weight: 900; }
-        #success-message h4 { font-size: 1.3rem; color: #047857; margin-bottom: 20px; font-weight: 700; border-bottom: 2px solid #a7f3d0; display: inline-block; padding-bottom: 5px; }
-        #success-message p { font-size: 1.1rem; color: #065f46; font-weight: 500; line-height: 1.7; }
-
-        @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        @media (max-width: 991px) {
-            .contact-wrap { grid-template-columns: 1fr; gap: 40px; margin-top: 30px; }
-            .info-card, .form-card { padding: 40px 25px; }
-            .upi-container { flex-direction: column; gap: 15px; }
-            .copy-btn { width: 100%; }
-        }
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--text-main); font-size: 0.95rem; }
+        .input-group input, .input-group select { width: 100%; padding: 14px 18px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; transition: 0.3s; background: #f8fafc; font-family: inherit; }
+        
+        /* Success Message */
+        #success-message { display: none; text-align: center; background: white; padding: 40px 20px; border-radius: 40px; box-shadow: var(--shadow-heavy); border: 2px solid #10b981; }
+        #success-message i { font-size: 3.5rem; color: #10b981; margin-bottom: 20px; }
+        #success-message h2 { font-size: 1.8rem; margin-bottom: 10px; color: var(--text-main); }
     </style>
 </head>
 <body>
 
-    <!-- Premium Navbar -->
     <nav class="navbar">
         <div class="logo">QwickDesk<span>.</span></div>
         <div class="nav-menu">
@@ -73,201 +63,91 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="section-padding container">
-        <div class="section-title reveal fade-up">
-            <span class="badge-premium" style="margin-bottom: 15px;">Secure Onboarding</span>
-            <h1 class="text-gradient" style="font-size: 4rem; margin-bottom: 10px;">Launch Project</h1>
-            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Confirm your slot and initiate the development process instantly.</p>
-        </div>
+    <header class="contact-header container reveal fade-up">
+        <h1 class="text-gradient">Let's Build Your Asset.</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto;">Finalize your payment or reach out via WhatsApp/Call to deploy your digital infrastructure.</p>
+    </header>
 
-        <div class="contact-wrap">
-            <!-- Left Info Card with 3D Hover -->
-            <div class="info-card card-3d reveal fade-left">
-                <h2>Direct Access</h2>
-                <p>Connect securely with our development team using the channels below.</p>
-                
-                <div class="contact-method">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <h4>Voice Call</h4>
-                        <a href="tel:+917249828812">+91 7249828812</a>
-                    </div>
-                </div>
-                <div class="contact-method">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                        <h4>WhatsApp Chat</h4>
-                        <a href="https://wa.me/917249828812">+91 7249828812</a>
-                    </div>
-                </div>
-                <div class="contact-method">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email Us</h4>
-                        <a href="mailto:qwickdesksolutions@outlook.com">qwickdesksolutions@outlook.com</a>
-                    </div>
+    <section class="container contact-wrapper">
+        
+        <!-- Left Box -->
+        <div class="direct-access-box reveal fade-left delay-1">
+            <h2>Direct Access</h2>
+            <p>Connect instantly with our development team.</p>
+            
+            <div class="contact-method">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <h4>Voice Call</h4>
+                    <a href="tel:+917249828812">+91 7249828812</a>
                 </div>
             </div>
-
-            <!-- Right Form Card with 3D Hover -->
-            <div class="form-card card-3d reveal fade-right delay-1">
-                
-                <!-- Explicit Success State Box (Hidden by default) -->
-                <div id="success-message">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Form Submitted!</h3>
-                    <h4>Payment Under Verification</h4>
-                    <p>We have successfully received your project requirements and UTR number.<br>Our billing team will verify your payment and contact you shortly to initiate the project.</p>
-                    <a href="index.html" class="btn btn-primary" style="margin-top: 20px;">Back to Home</a>
-                </div>
-                
-                <!-- Form Box Wrapper -->
-                <div id="form-container-box">
-                    <form id="qwickdesk-form" action="https://formspree.io/f/xaqrevgl" method="POST">
-                        
-                        <div class="payment-box">
-                            <h4><i class="fas fa-lock" style="color: var(--secondary);"></i> Secure UPI Checkout</h4>
-                            <!-- Scanner image (Remember to keep scanner.png exactly this name) -->
-                            <img src="scanner.png" alt="Scan to Pay" class="qr-code-img">
-                            <div class="upi-container">
-                                <span class="upi-id" id="upi-text">7249828812@upi</span>
-                                <button type="button" class="copy-btn" onclick="copyUPI()" id="copy-btn-element">
-                                    <i class="fas fa-copy"></i> Copy
-                                </button>
-                            </div>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Scan QR or copy UPI ID. Complete payment and enter Reference/UTR below.</p>
-                        </div>
-
-                        <div class="input-group">
-                            <label>Registered Brand / Name</label>
-                            <input type="text" name="name" placeholder="E.g. Sharma Enterprise" required>
-                        </div>
-                        <div class="input-group">
-                            <label>WhatsApp Number</label>
-                            <input type="tel" name="phone" placeholder="+91" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Select Requirement</label>
-                            <select name="plan" required>
-                                <option value="" disabled selected>-- Choose a package --</option>
-                                <option value="Starter Plan (699)">Starter (₹699)</option>
-                                <option value="Growth Plan (999)">Growth (₹999)</option>
-                                <option value="Pro Plan (1499)">Pro (₹1,499)</option>
-                                <option value="Custom Dynamic">Custom Enterprise Build</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label style="color: var(--primary-light);">12-Digit UTR / Reference ID</label>
-                            <input type="text" name="utr_number" placeholder="Enter transaction reference" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Project Brief</label>
-                            <textarea name="message" rows="4" placeholder="Briefly explain your vision..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%; padding: 20px; font-size: 1.1rem;">
-                            Submit Form & Payment <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
-                        </button>
-                        <p id="error-msg" style="display:none; color: var(--accent); margin-top: 15px; text-align: center; font-weight: 700;">Oops! Submission failed. Please try again.</p>
-                    </form>
+            
+            <div class="contact-method" style="margin-bottom: 0;">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h4>WhatsApp Chat</h4>
+                    <a href="https://wa.me/917249828812" target="_blank">+91 7249828812</a>
                 </div>
             </div>
         </div>
+
+        <!-- Right Box -->
+        <div class="form-container-box reveal fade-right delay-2" id="form-container-box">
+            <div class="upi-checkout-box">
+                <h3><i class="fas fa-lock" style="color: #10b981;"></i> Secure UPI Checkout</h3>
+                <img src="scanner.png" alt="Scan to Pay" class="qr-scanner-img">
+                <div class="upi-copy-container">
+                    <h4 id="upi-text">7249828812@upi</h4>
+                    <button type="button" class="btn btn-primary" id="copy-btn-element" onclick="copyUPI()" style="width: 100%; padding: 8px 20px;">
+                        <i class="fas fa-copy"></i> Copy UPI
+                    </button>
+                </div>
+            </div>
+
+            <form id="qwickdesk-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+                <div class="input-group">
+                    <label>Registered Brand Name</label>
+                    <input type="text" name="Brand_Name" placeholder="E.g. Sharma Enterprise" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" name="WhatsApp_Number" placeholder="+91 XXXXXXXXXX" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Package Selected</label>
+                    <select name="Package" required>
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="Starter Plan (₹699)">Starter Plan (₹699)</option>
+                        <option value="Growth Plan (₹999)">Growth Plan (₹999)</option>
+                        <option value="Pro Elite Plan (₹1499)">Pro Elite Plan (₹1499)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Payment UTR / Ref ID</label>
+                    <input type="text" name="UTR_ID" placeholder="Enter 12-digit UTR">
+                </div>
+                
+                <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%; padding: 15px; margin-top: 10px;">
+                    Submit & Confirm <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                </button>
+            </form>
+        </div>
+
+        <div id="success-message" class="reveal">
+            <i class="fas fa-check-circle"></i>
+            <h2>Asset Initialization Started!</h2>
+            <p style="color: var(--text-muted);">Details received. Our developer will WhatsApp you shortly.</p>
+            <a href="index.html" class="btn btn-outline" style="margin-top: 20px;">Back to Home</a>
+        </div>
+
     </section>
 
-    <!-- Floating WhatsApp -->
     <a href="https://wa.me/917249828812" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
-
-    <!-- Premium Global Footer -->
-    <footer class="premium-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h2>QwickDesk<span>.</span></h2>
-                <p>Dominate your local market with elite digital infrastructure. We build assets that work 24/7 for you.</p>
-                <a href="https://www.instagram.com/qwickdesksolutions?igsh=MW15anRmbDFxbmhkZw==" target="_blank" class="social-btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: var(--shadow-glow); transition: 0.3s;">
-                    <i class="fab fa-instagram" style="font-size: 1.2rem;"></i> Follow on Instagram
-                </a>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="services.html">Expertise & Process</a>
-                <a href="pricing.html">Plans & Pricing</a>
-                <a href="portfolio.html">Our Work</a>
-            </div>
-            <div class="footer-links">
-                <h4>Dedicated A/C Support</h4>
-                <p>We are available 24/7 for our premium clients.</p>
-                <div class="support-box">
-                    <span>Direct Support Line</span>
-                    <a href="tel:+917249828812"><i class="fas fa-headset"></i> +91 7249828812</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 QwickDesk Solutions. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Essential Scripts -->
+    <footer class="premium-footer"><div class="footer-bottom"><p>&copy; 2026 QwickDesk Solutions.</p></div></footer>
     <script src="script.js"></script>
-    <script>
-        // Copy UPI Functionality
-        function copyUPI() {
-            var upiText = document.getElementById("upi-text").innerText;
-            navigator.clipboard.writeText(upiText).then(function() {
-                var btn = document.getElementById("copy-btn-element");
-                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                btn.style.background = "var(--secondary)"; // Turns Green
-                
-                setTimeout(function() {
-                    btn.innerHTML = '<i class="fas fa-copy"></i> Copy';
-                    btn.style.background = "var(--primary-light)"; // Back to Blue
-                }, 3000);
-            });
-        }
-
-        // Formspree AJAX Form Submission (No Page Reload)
-        var form = document.getElementById("qwickdesk-form");
-        form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Stop default redirection
-            
-            var btn = document.getElementById("submit-btn");
-            var originalText = btn.innerHTML;
-            
-            // Show Loading State
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Securely...';
-            btn.disabled = true;
-            btn.style.opacity = '0.8';
-
-            var data = new FormData(form);
-            
-            fetch(form.action, {
-                method: form.method,
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    // Hide Form and Show Success Message
-                    document.getElementById("form-container-box").style.display = "none";
-                    document.getElementById("success-message").style.display = "block";
-                } else {
-                    // Handle Error
-                    document.getElementById("error-msg").style.display = "block";
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                }
-            }).catch(error => {
-                // Handle Network Error
-                document.getElementById("error-msg").style.display = "block";
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                btn.style.opacity = '1';
-            });
-        });
-    </script>
 </body>
-                </html>
-                
+</html>
