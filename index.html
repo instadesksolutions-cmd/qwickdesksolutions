@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QwickDesk | Elite Digital Agency</title>
+    <title>QwickDesk Solutions | High-End Web Design</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Specific Home Page Styles for extra crispness */
-        .hero { min-height: 85vh; display: flex; align-items: center; position: relative; }
-        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
-        .hero-content h1 { font-size: 3.8rem; margin-bottom: 20px; line-height: 1.15; }
+        /* Hero Section */
+        .hero { min-height: 90vh; display: flex; align-items: center; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-content h1 { font-size: 4.5rem; margin-bottom: 20px; line-height: 1.1; }
+        .hero-content p { font-size: 1.25rem; margin-bottom: 35px; color: var(--text-muted); }
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
         
-        /* New About Us Section Layout */
-        .about-section { background: var(--white); border-radius: 40px; padding: 80px 5%; margin: 40px 0; box-shadow: var(--shadow-soft); border: 1px solid #e2e8f0; }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .keyword-pills span { display: inline-block; background: #f1f5f9; padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; color: var(--primary-light); margin: 6px 6px 0 0; border: 1px solid rgba(37,99,235,0.1); }
-        
-        /* Advanced Cards */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; margin-top: 50px; }
-        .feature-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); padding: 40px 30px; border-radius: 24px; text-align: center; border: 1px solid var(--glass-border); }
-        .feature-icon { width: 70px; height: 70px; background: rgba(37,99,235,0.1); color: var(--primary-light); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 25px; transition: var(--transition-bounce); }
-        .feature-card:hover .feature-icon { transform: scale(1.1) rotate(5deg); background: var(--primary-light); color: white; }
+        /* Stats / Why Digital */
+        .knowledge-section { background: var(--dark); color: white; padding: 80px 5%; border-radius: 40px; margin: 50px 5%; }
+        .knowledge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+        .stat-box i { font-size: 40px; color: var(--primary-light); margin-bottom: 20px; }
+        .stat-box h3 { color: white; font-size: 2.5rem; margin-bottom: 10px; }
+        .stat-box p { color: #cbd5e1; font-size: 1.1rem; }
+
+        /* Process Section */
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .process-card { padding: 40px; text-align: center; background: white; border-radius: 24px; box-shadow: var(--shadow-sm); }
+        .process-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); border-bottom: 4px solid var(--primary-light); }
+        .process-icon { width: 80px; height: 80px; background: #eff6ff; color: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 20px; }
+
+        /* Big CTA Banner */
+        .cta-banner { background: linear-gradient(135deg, var(--primary-light), var(--primary)); text-align: center; padding: 80px 20px; color: white; border-radius: 40px; margin: 100px 5%; box-shadow: var(--shadow-glow); }
+        .cta-banner h2 { color: white; font-size: 3rem; margin-bottom: 20px; }
 
         @media (max-width: 991px) {
-            .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .about-section { padding: 40px 20px; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-content h1 { font-size: 3rem; }
+            .hero-buttons { justify-content: center; }
+            .process-grid { grid-template-columns: 1fr; }
+            .cta-banner h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -36,115 +46,96 @@
         <div class="logo">QwickDesk<span>.</span></div>
         <div class="nav-menu">
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Our Expertise</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="portfolio.html">Our Work</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="pricing.html" class="btn btn-primary" style="padding: 10px 24px;">Packages</a>
+                <a href="pricing.html" class="btn btn-primary">Packages</a>
                 <div class="hamburger"><i class="fas fa-bars"></i></div>
             </div>
         </div>
     </nav>
 
-    <!-- Premium Hero Section -->
-    <header class="section-padding hero container">
+    <!-- Hero Section -->
+    <section class="section-padding hero">
         <div class="hero-grid">
-            <div class="hero-content reveal fade-left">
-                <span class="badge-premium" style="margin-bottom: 20px;">Empowering Local Businesses</span>
-                <h1 class="text-gradient">Turn Your Business Into a Digital Brand.</h1>
-                <p>A website is not just a digital brochure; it's a 24/7 sales engine. We build highly optimized, premium web experiences for shops, consultancies, and physical classes.</p>
-                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px;">
-                    <a href="services.html" class="btn btn-primary">Our Process <i class="fas fa-arrow-right"></i></a>
+            <div class="hero-content reveal">
+                <h1 class="text-gradient">Dominate Your Local Market Online.</h1>
+                <p>A website is not just a digital brochure; it's a 24/7 sales engine. We build highly optimized, premium web experiences for shops, consultancies, and classes.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary">Explore Expertise <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://wa.me/917249828812" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Chat with Expert</a>
                 </div>
             </div>
-            <div class="hero-img reveal fade-right delay-1">
-                <!-- Using float-anim class from CSS -->
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80" alt="Dashboard" class="float-anim" style="border-radius: 30px; box-shadow: var(--shadow-heavy);">
-            </div>
-        </div>
-    </header>
-
-    <!-- New About Us & Keywords Section (Makes the page longer and deeply detailed) -->
-    <section class="container reveal zoom">
-        <div class="about-section glass-panel">
-            <div class="about-grid">
-                <div>
-                    <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Who We Are</h2>
-                    <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 20px;">At QwickDesk Solutions, we understand the gap between offline physical businesses and online market dominance. We bridge that gap through advanced coding architectures and psychology-driven aesthetics, ensuring your digital real estate outshines the competition.</p>
-                    <div class="keyword-pills">
-                        <span>Web Architecture</span>
-                        <span>UI/UX Design</span>
-                        <span>Local SEO</span>
-                        <span>Lead Funnels</span>
-                        <span>Automation</span>
-                    </div>
-                </div>
-                <div class="reveal fade-right delay-1">
-                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80" alt="Our Team" style="border-radius: 20px; box-shadow: var(--shadow-medium);">
-                </div>
+            <div class="hero-img reveal delay-1">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80" alt="QwickDesk Setup">
             </div>
         </div>
     </section>
 
-    <!-- How We Work Section (Upgraded with 3D Cards) -->
-    <section class="section-padding container">
+    <!-- Knowledge / Why Digital Section -->
+    <section class="knowledge-section reveal">
+        <div class="section-title">
+            <h2 style="color:white;">Why Your Business Needs Us</h2>
+            <p style="color:#cbd5e1;">In 2026, relying only on word-of-mouth is not enough. Here is why going digital the right way changes the game.</p>
+        </div>
+        <div class="knowledge-grid">
+            <div class="stat-box">
+                <i class="fas fa-search"></i>
+                <h3>90%</h3>
+                <p>Of customers search online before visiting a local store or consultancy.</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>3 Secs</h3>
+                <p>If your site takes longer to load, 50% of your potential clients will leave.</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>24/7</h3>
+                <p>Your business generates leads even when your physical shop is closed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Process Section -->
+    <section class="section-padding">
         <div class="section-title reveal">
             <h2>Our Flawless Process</h2>
-            <p>How we transform your business into a digital powerhouse in days.</p>
+            <p>How we take your physical business and transform it into a digital powerhouse in just a few days.</p>
         </div>
-        <div class="features-grid">
-            <div class="feature-card card-3d reveal fade-left">
-                <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+        <div class="process-grid">
+            <div class="process-card reveal">
+                <div class="process-icon"><i class="fas fa-lightbulb"></i></div>
                 <h3>1. Discovery</h3>
-                <p style="color: var(--text-muted); margin-top: 15px;">We analyze your business and competitors to map out a strategy that puts you on top.</p>
+                <p>We analyze your business, your target audience, and your competitors to map out the perfect digital strategy.</p>
             </div>
-            <div class="feature-card card-3d reveal zoom delay-1">
-                <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="process-card reveal delay-1">
+                <div class="process-icon"><i class="fas fa-laptop-code"></i></div>
                 <h3>2. Architecture</h3>
-                <p style="color: var(--text-muted); margin-top: 15px;">We design custom premium UI and write clean code to ensure instant loads and high SEO ranks.</p>
+                <p>We write clean, lightweight code and design custom graphics to ensure your brand looks premium and unique.</p>
             </div>
-            <div class="feature-card card-3d reveal fade-right delay-2">
-                <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+            <div class="process-card reveal delay-2">
+                <div class="process-icon"><i class="fas fa-rocket"></i></div>
                 <h3>3. Deployment</h3>
-                <p style="color: var(--text-muted); margin-top: 15px;">Your platform goes live with integrated WhatsApp triggers and secure lead capture systems.</p>
+                <p>Your platform goes live with advanced SEO tags, instant load speeds, and integrated lead generation forms.</p>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/917249828812" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
-    
-    <!-- Premium Global Footer with Support & Instagram -->
-    <footer class="premium-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h2>QwickDesk<span>.</span></h2>
-                <p>Dominate your local market with elite digital infrastructure. We build assets that work 24/7 for you.</p>
-                <a href="https://www.instagram.com/qwickdesksolutions?igsh=MW15anRmbDFxbmhkZw==" target="_blank" class="social-btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: var(--shadow-glow); transition: 0.3s;">
-                    <i class="fab fa-instagram" style="font-size: 1.2rem;"></i> Follow on Instagram
-                </a>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="services.html">Expertise & Process</a>
-                <a href="pricing.html">Plans & Pricing</a>
-                <a href="portfolio.html">Our Work</a>
-            </div>
-            <div class="footer-links">
-                <h4>Dedicated A/C Support</h4>
-                <p>We are available 24/7 for our premium clients.</p>
-                <div class="support-box">
-                    <span>Direct Support Line</span>
-                    <a href="tel:+917249828812"><i class="fas fa-headset"></i> +91 7249828812</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 QwickDesk Solutions. All Rights Reserved.</p>
-        </div>
+    <!-- Massive CTA Banner -->
+    <section class="cta-banner reveal">
+        <h2>Ready to Scale Your Revenue?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Stop losing clients to competitors who have a better online presence. Let's build something extraordinary today.</p>
+        <a href="pricing.html" class="btn btn-outline" style="background: white; color: var(--primary); padding: 18px 40px; font-size: 1.1rem;">View Our Packages</a>
+    </section>
+
+    <a href="https://wa.me/917249828812" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer>
+        <h2>QwickDesk Solutions.</h2>
+        <p>&copy; 2026 All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>
